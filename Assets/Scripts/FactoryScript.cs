@@ -219,7 +219,7 @@ public class FactoryScript : MonoBehaviour {
     public void finishWork()
     {
         Debug.Log("Moving trigger");
-        exitTrigger.ForceExit();
+        exitTrigger.ForceExit(3);
     }
 
     public void standUp()

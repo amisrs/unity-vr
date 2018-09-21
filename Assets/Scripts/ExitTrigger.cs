@@ -24,22 +24,22 @@ public class ExitTrigger : MonoBehaviour {
         {
             if(SceneManager.GetActiveScene().name == "dorm")
             {
-                FadeAndLoad(1);
+                FadeAndLoad(2);
             } else if (SceneManager.GetActiveScene().name == "entrance")
             {
                 Debug.Log("Loading the factory");
-                FadeAndLoad(2);
+                FadeAndLoad(3);
             } else if (SceneManager.GetActiveScene().name == "factory")
             {
-                FadeAndLoad(3);
+                FadeAndLoad(4);
             }
             
         }
     }
 
-    public void ForceExit()
+    public void ForceExit(int scene)
     {
-        FadeAndLoad(3);
+        FadeAndLoad(scene);
     }
 
     void FadeAndLoad(int scene)
