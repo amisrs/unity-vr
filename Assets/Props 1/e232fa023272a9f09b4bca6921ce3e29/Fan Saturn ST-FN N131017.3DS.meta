@@ -1,0 +1,307 @@
+fileFormatVersion: 2
+guid: 8511594f95766d84a850d03c87a34c8d
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Box001
+    100002: Box002
+    100004: Box003
+    100006: Box004
+    100008: Box005
+    100010: Box006
+    100012: Box007
+    100014: Box008
+    100016: Box009
+    100018: Box010
+    100020: Cylinder00
+    100022: Cylinder01
+    100024: Cylinder02
+    100026: Cylinder03
+    100028: Cylinder04
+    100030: Cylinder05
+    100032: Cylinder06
+    100034: Cylinder07
+    100036: Cylinder08
+    100038: Cylinder09
+    100040: Cylinder10
+    100042: Cylinder11
+    100044: Cylinder12
+    100046: Cylinder13
+    100048: Cylinder14
+    100050: Cylinder15
+    100052: Cylinder16
+    100054: Cylinder17
+    100056: Cylinder18
+    100058: Cylinder19
+    100060: Cylinder20
+    100062: Cylinder21
+    100064: Cylinder22
+    100066: Cylinder23
+    100068: Cylinder24
+    100070: Cylinder25
+    100072: //RootNode
+    100074: krishka ni
+    100076: Line001
+    100078: Line004
+    100080: Line005
+    100082: Loft001
+    100084: Object001
+    400000: Box001
+    400002: Box002
+    400004: Box003
+    400006: Box004
+    400008: Box005
+    400010: Box006
+    400012: Box007
+    400014: Box008
+    400016: Box009
+    400018: Box010
+    400020: Cylinder00
+    400022: Cylinder01
+    400024: Cylinder02
+    400026: Cylinder03
+    400028: Cylinder04
+    400030: Cylinder05
+    400032: Cylinder06
+    400034: Cylinder07
+    400036: Cylinder08
+    400038: Cylinder09
+    400040: Cylinder10
+    400042: Cylinder11
+    400044: Cylinder12
+    400046: Cylinder13
+    400048: Cylinder14
+    400050: Cylinder15
+    400052: Cylinder16
+    400054: Cylinder17
+    400056: Cylinder18
+    400058: Cylinder19
+    400060: Cylinder20
+    400062: Cylinder21
+    400064: Cylinder22
+    400066: Cylinder23
+    400068: Cylinder24
+    400070: Cylinder25
+    400072: //RootNode
+    400074: krishka ni
+    400076: Line001
+    400078: Line004
+    400080: Line005
+    400082: Loft001
+    400084: Object001
+    2100000: st tile
+    2100002: blue
+    2100004: pl
+    2100006: st gold
+    2100008: standart metal
+    2100010: Plastic
+    2100012: label
+    2300000: Box001
+    2300002: Box002
+    2300004: Box003
+    2300006: Box004
+    2300008: Box005
+    2300010: Box006
+    2300012: Box007
+    2300014: Box008
+    2300016: Box009
+    2300018: Box010
+    2300020: Cylinder00
+    2300022: Cylinder01
+    2300024: Cylinder02
+    2300026: Cylinder03
+    2300028: Cylinder04
+    2300030: Cylinder05
+    2300032: Cylinder06
+    2300034: Cylinder07
+    2300036: Cylinder08
+    2300038: Cylinder09
+    2300040: Cylinder10
+    2300042: Cylinder11
+    2300044: Cylinder12
+    2300046: Cylinder13
+    2300048: Cylinder14
+    2300050: Cylinder15
+    2300052: Cylinder16
+    2300054: Cylinder17
+    2300056: Cylinder18
+    2300058: Cylinder19
+    2300060: Cylinder20
+    2300062: Cylinder21
+    2300064: Cylinder22
+    2300066: Cylinder23
+    2300068: Cylinder24
+    2300070: Cylinder25
+    2300072: krishka ni
+    2300074: Line001
+    2300076: Line004
+    2300078: Line005
+    2300080: Loft001
+    2300082: Object001
+    3300000: Box001
+    3300002: Box002
+    3300004: Box003
+    3300006: Box004
+    3300008: Box005
+    3300010: Box006
+    3300012: Box007
+    3300014: Box008
+    3300016: Box009
+    3300018: Box010
+    3300020: Cylinder00
+    3300022: Cylinder01
+    3300024: Cylinder02
+    3300026: Cylinder03
+    3300028: Cylinder04
+    3300030: Cylinder05
+    3300032: Cylinder06
+    3300034: Cylinder07
+    3300036: Cylinder08
+    3300038: Cylinder09
+    3300040: Cylinder10
+    3300042: Cylinder11
+    3300044: Cylinder12
+    3300046: Cylinder13
+    3300048: Cylinder14
+    3300050: Cylinder15
+    3300052: Cylinder16
+    3300054: Cylinder17
+    3300056: Cylinder18
+    3300058: Cylinder19
+    3300060: Cylinder20
+    3300062: Cylinder21
+    3300064: Cylinder22
+    3300066: Cylinder23
+    3300068: Cylinder24
+    3300070: Cylinder25
+    3300072: krishka ni
+    3300074: Line001
+    3300076: Line004
+    3300078: Line005
+    3300080: Loft001
+    3300082: Object001
+    4300000: Box003
+    4300002: Box004
+    4300004: Box002
+    4300006: Box001
+    4300008: Cylinder02
+    4300010: Line001
+    4300012: Line005
+    4300014: Line004
+    4300016: Cylinder01
+    4300018: Object001
+    4300020: Cylinder00
+    4300022: Cylinder03
+    4300024: Cylinder04
+    4300026: Cylinder05
+    4300028: Box008
+    4300030: Cylinder06
+    4300032: Box006
+    4300034: Box007
+    4300036: Cylinder07
+    4300038: Cylinder08
+    4300040: Box005
+    4300042: Cylinder09
+    4300044: Loft001
+    4300046: Cylinder10
+    4300048: Cylinder11
+    4300050: Cylinder12
+    4300052: Cylinder13
+    4300054: Cylinder14
+    4300056: Cylinder15
+    4300058: Cylinder16
+    4300060: Cylinder17
+    4300062: Box010
+    4300064: Cylinder18
+    4300066: Cylinder19
+    4300068: Cylinder20
+    4300070: Cylinder21
+    4300072: Box009
+    4300074: Cylinder22
+    4300076: Cylinder23
+    4300078: Cylinder24
+    4300080: Cylinder25
+    4300082: krishka ni
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
