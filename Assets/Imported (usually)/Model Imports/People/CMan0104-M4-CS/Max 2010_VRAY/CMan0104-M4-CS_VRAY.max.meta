@@ -1,0 +1,262 @@
+fileFormatVersion: 2
+guid: 55ce4f85a4b5cb84ea5978abef91bd34
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Back_Light
+    100002: Back_Light_Controller
+    100004: Back_Wall
+    100006: CMan0104-M4-CS_Footsteps
+    100008: CMan0104-M4-CS_Head
+    100010: CMan0104-M4-CS_HeadNub
+    100012: CMan0104-M4-CS_Hips
+    100014: CMan0104-M4-CS_LeftArm
+    100016: CMan0104-M4-CS_LeftFoot
+    100018: CMan0104-M4-CS_LeftForeArm
+    100020: CMan0104-M4-CS_LeftHand
+    100022: CMan0104-M4-CS_LeftHandIndex1
+    100024: CMan0104-M4-CS_LeftHandIndex2
+    100026: CMan0104-M4-CS_LeftHandIndex3
+    100028: CMan0104-M4-CS_LeftHandIndexNub
+    100030: CMan0104-M4-CS_LeftHandMiddle1
+    100032: CMan0104-M4-CS_LeftHandMiddle2
+    100034: CMan0104-M4-CS_LeftHandMiddle3
+    100036: CMan0104-M4-CS_LeftHandMiddleNub
+    100038: CMan0104-M4-CS_LeftHandPinky1
+    100040: CMan0104-M4-CS_LeftHandPinky2
+    100042: CMan0104-M4-CS_LeftHandPinky3
+    100044: CMan0104-M4-CS_LeftHandPinkyNub
+    100046: CMan0104-M4-CS_LeftHandRing1
+    100048: CMan0104-M4-CS_LeftHandRing2
+    100050: CMan0104-M4-CS_LeftHandRing3
+    100052: CMan0104-M4-CS_LeftHandRingNub
+    100054: CMan0104-M4-CS_LeftHandThumb1
+    100056: CMan0104-M4-CS_LeftHandThumb2
+    100058: CMan0104-M4-CS_LeftHandThumb3
+    100060: CMan0104-M4-CS_LeftHandThumbNub
+    100062: CMan0104-M4-CS_LeftLeg
+    100064: CMan0104-M4-CS_LeftShoulder
+    100066: CMan0104-M4-CS_LeftToeBase
+    100068: CMan0104-M4-CS_LeftToeBaseNub
+    100070: CMan0104-M4-CS_LeftUpLeg
+    100072: CMan0104-M4-CS_Mesh
+    100074: CMan0104-M4-CS_Neck
+    100076: CMan0104-M4-CS_RightArm
+    100078: CMan0104-M4-CS_RightFoot
+    100080: CMan0104-M4-CS_RightForeArm
+    100082: CMan0104-M4-CS_RightHand
+    100084: CMan0104-M4-CS_RightHandIndex1
+    100086: CMan0104-M4-CS_RightHandIndex2
+    100088: CMan0104-M4-CS_RightHandIndex3
+    100090: CMan0104-M4-CS_RightHandIndexNub
+    100092: CMan0104-M4-CS_RightHandMiddle1
+    100094: CMan0104-M4-CS_RightHandMiddle2
+    100096: CMan0104-M4-CS_RightHandMiddle3
+    100098: CMan0104-M4-CS_RightHandMiddleNub
+    100100: CMan0104-M4-CS_RightHandPinky1
+    100102: CMan0104-M4-CS_RightHandPinky2
+    100104: CMan0104-M4-CS_RightHandPinky3
+    100106: CMan0104-M4-CS_RightHandPinkyNub
+    100108: CMan0104-M4-CS_RightHandRing1
+    100110: CMan0104-M4-CS_RightHandRing2
+    100112: CMan0104-M4-CS_RightHandRing3
+    100114: CMan0104-M4-CS_RightHandRingNub
+    100116: CMan0104-M4-CS_RightHandThumb1
+    100118: CMan0104-M4-CS_RightHandThumb2
+    100120: CMan0104-M4-CS_RightHandThumb3
+    100122: CMan0104-M4-CS_RightHandThumbNub
+    100124: CMan0104-M4-CS_RightLeg
+    100126: CMan0104-M4-CS_RightShoulder
+    100128: CMan0104-M4-CS_RightToeBase
+    100130: CMan0104-M4-CS_RightToeBaseNub
+    100132: CMan0104-M4-CS_RightUpLeg
+    100134: CMan0104-M4-CS_Spine
+    100136: CMan0104-M4-CS_Spine1
+    100138: CMan0104-M4-CS_Spine2
+    100140: CMan0104-M4-CS_Spine3
+    100142: CMan0104-M4-CS_Spine4
+    100144: //RootNode
+    100146: Fill_Light
+    100148: Flash_Light
+    100150: Key_Light
+    100152: Key_Light01
+    100154: Long-Shot
+    100156: Long-Shot.Target
+    100158: StandUp_Zone
+    400000: Back_Light
+    400002: Back_Light_Controller
+    400004: Back_Wall
+    400006: CMan0104-M4-CS_Footsteps
+    400008: CMan0104-M4-CS_Head
+    400010: CMan0104-M4-CS_HeadNub
+    400012: CMan0104-M4-CS_Hips
+    400014: CMan0104-M4-CS_LeftArm
+    400016: CMan0104-M4-CS_LeftFoot
+    400018: CMan0104-M4-CS_LeftForeArm
+    400020: CMan0104-M4-CS_LeftHand
+    400022: CMan0104-M4-CS_LeftHandIndex1
+    400024: CMan0104-M4-CS_LeftHandIndex2
+    400026: CMan0104-M4-CS_LeftHandIndex3
+    400028: CMan0104-M4-CS_LeftHandIndexNub
+    400030: CMan0104-M4-CS_LeftHandMiddle1
+    400032: CMan0104-M4-CS_LeftHandMiddle2
+    400034: CMan0104-M4-CS_LeftHandMiddle3
+    400036: CMan0104-M4-CS_LeftHandMiddleNub
+    400038: CMan0104-M4-CS_LeftHandPinky1
+    400040: CMan0104-M4-CS_LeftHandPinky2
+    400042: CMan0104-M4-CS_LeftHandPinky3
+    400044: CMan0104-M4-CS_LeftHandPinkyNub
+    400046: CMan0104-M4-CS_LeftHandRing1
+    400048: CMan0104-M4-CS_LeftHandRing2
+    400050: CMan0104-M4-CS_LeftHandRing3
+    400052: CMan0104-M4-CS_LeftHandRingNub
+    400054: CMan0104-M4-CS_LeftHandThumb1
+    400056: CMan0104-M4-CS_LeftHandThumb2
+    400058: CMan0104-M4-CS_LeftHandThumb3
+    400060: CMan0104-M4-CS_LeftHandThumbNub
+    400062: CMan0104-M4-CS_LeftLeg
+    400064: CMan0104-M4-CS_LeftShoulder
+    400066: CMan0104-M4-CS_LeftToeBase
+    400068: CMan0104-M4-CS_LeftToeBaseNub
+    400070: CMan0104-M4-CS_LeftUpLeg
+    400072: CMan0104-M4-CS_Mesh
+    400074: CMan0104-M4-CS_Neck
+    400076: CMan0104-M4-CS_RightArm
+    400078: CMan0104-M4-CS_RightFoot
+    400080: CMan0104-M4-CS_RightForeArm
+    400082: CMan0104-M4-CS_RightHand
+    400084: CMan0104-M4-CS_RightHandIndex1
+    400086: CMan0104-M4-CS_RightHandIndex2
+    400088: CMan0104-M4-CS_RightHandIndex3
+    400090: CMan0104-M4-CS_RightHandIndexNub
+    400092: CMan0104-M4-CS_RightHandMiddle1
+    400094: CMan0104-M4-CS_RightHandMiddle2
+    400096: CMan0104-M4-CS_RightHandMiddle3
+    400098: CMan0104-M4-CS_RightHandMiddleNub
+    400100: CMan0104-M4-CS_RightHandPinky1
+    400102: CMan0104-M4-CS_RightHandPinky2
+    400104: CMan0104-M4-CS_RightHandPinky3
+    400106: CMan0104-M4-CS_RightHandPinkyNub
+    400108: CMan0104-M4-CS_RightHandRing1
+    400110: CMan0104-M4-CS_RightHandRing2
+    400112: CMan0104-M4-CS_RightHandRing3
+    400114: CMan0104-M4-CS_RightHandRingNub
+    400116: CMan0104-M4-CS_RightHandThumb1
+    400118: CMan0104-M4-CS_RightHandThumb2
+    400120: CMan0104-M4-CS_RightHandThumb3
+    400122: CMan0104-M4-CS_RightHandThumbNub
+    400124: CMan0104-M4-CS_RightLeg
+    400126: CMan0104-M4-CS_RightShoulder
+    400128: CMan0104-M4-CS_RightToeBase
+    400130: CMan0104-M4-CS_RightToeBaseNub
+    400132: CMan0104-M4-CS_RightUpLeg
+    400134: CMan0104-M4-CS_Spine
+    400136: CMan0104-M4-CS_Spine1
+    400138: CMan0104-M4-CS_Spine2
+    400140: CMan0104-M4-CS_Spine3
+    400142: CMan0104-M4-CS_Spine4
+    400144: //RootNode
+    400146: Fill_Light
+    400148: Flash_Light
+    400150: Key_Light
+    400152: Key_Light01
+    400154: Long-Shot
+    400156: Long-Shot.Target
+    400158: StandUp_Zone
+    2100000: Back_Wall
+    2100002: 'Material #3'
+    2100004: 'Material #2'
+    2100006: 'Material #0'
+    2100008: 'Material #1'
+    2100010: CMan0104-M4-CS_Hair
+    2300000: Back_Wall
+    3300000: Back_Wall
+    4300000: Back_Wall
+    4300002: CMan0104-M4-CS_Mesh
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: CMan0104-M4-CS_Mesh
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
