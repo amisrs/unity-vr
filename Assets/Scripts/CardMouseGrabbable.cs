@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-public class CardGrabbable : OVRGrabbable {
-
+public class CardMouseGrabbable : MouseGrabbable {
     [SerializeField]
     private GameObject cardLocation;
 
@@ -14,52 +13,40 @@ public class CardGrabbable : OVRGrabbable {
     private bool isAttached = false;
     private Quaternion rotation = Quaternion.Euler(80.08701f, 94.552f, 69.333f);
 
-
-
-    private void Start()
-    {
-        if(!XRSettings.enabled)
+    // Use this for initialization
+    void Start () {
+        if(XRSettings.enabled)
         {
             return;
         }
-
-        if(isAttached)
+        if (isAttached)
         {
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            StartCoroutine(MoveToPosition(gameObject, 0.1f));
-            
+            gameObject.transform.position = cardLocation.transform.position;
+            gameObject.transform.rotation = rotation;
+
             gameObject.transform.parent = cardLocation.transform;
 
         }
     }
 
-    private void FixedUpdate()
+    public override void GrabBegin(MouseGrabber grabber)
     {
-        if(isAttached)
-        {
-            gameObject.transform.position = cardLocation.transform.position;
-            gameObject.transform.rotation = cardLocation.transform.rotation;
-        }
-    }
-
-    public override void GrabBegin(OVRGrabber hand, Collider grabPoint)
-    {
-        if(dormScript)
+        if (dormScript)
         {
             dormScript.grabbedID();
-            Debug.Log("Card grabbed");
         }
-        base.GrabBegin(hand, grabPoint);
 
+        base.GrabBegin(grabber);
     }
 
-    public override void GrabEnd(Vector3 linearVelocity, Vector3 angularVelocity)
+    public override void GrabEnd(MouseGrabber grabber)
     {
-        //move card to belt position
+        base.GrabEnd(grabber);
         gameObject.GetComponent<Rigidbody>().isKinematic = true;
         StartCoroutine(MoveToPosition(gameObject, 1f));
 
-        if(!isAttached)
+        if (!isAttached)
         {
             isAttached = true;
             gameObject.transform.parent = cardLocation.transform;
@@ -67,18 +54,20 @@ public class CardGrabbable : OVRGrabbable {
 
     }
 
+
     IEnumerator MoveToPosition(GameObject card, float time)
     {
         float elapsedTime = 0.0f;
-        
-        while(elapsedTime < time)
+
+        while (elapsedTime < time)
         {
-            card.transform.position = Vector3.Lerp(card.transform.position, cardLocation.transform.position, elapsedTime/time);
+            card.transform.position = Vector3.Lerp(card.transform.position, cardLocation.transform.position, elapsedTime / time);
             card.transform.rotation = Quaternion.Lerp(card.transform.rotation, rotation, elapsedTime / time);
             elapsedTime += Time.deltaTime;
             //Debug.Log("CardRotation: " + card.transform.rotation.ToString());
             yield return new WaitForEndOfFrame();
         }
-        
+
     }
+
 }

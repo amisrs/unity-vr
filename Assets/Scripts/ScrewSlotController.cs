@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class ScrewSlotController : MonoBehaviour {
     [SerializeField]
@@ -34,6 +35,11 @@ public class ScrewSlotController : MonoBehaviour {
             screwController.placeScrew(gameObject);
             screw = other.gameObject;
             GetComponent<Renderer>().enabled = false;
+            if(!XRSettings.enabled)
+            {
+                screw.transform.parent = transform;
+            }
+            
             
             if(firstPhone != null)
             {

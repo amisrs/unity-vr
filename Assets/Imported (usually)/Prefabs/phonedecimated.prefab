@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 54980909579130726}
   - component: {fileID: 65266822227188662}
   - component: {fileID: 114114789675616598}
+  - component: {fileID: 114976164522780064}
   m_Layer: 11
   m_Name: phonedecimated
   m_TagString: Conveyable
@@ -122,7 +123,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 48f79b58f9f4c6f49b5fe7617beff012, type: 2}
+  - {fileID: 2100000, guid: 18361bf040596a94388912caba3f4104, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -249,7 +250,11 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+  grabSoundClip: {fileID: 0}
   grabSound: {fileID: 8300000, guid: 0f5398941496bb14687a827f0caa4441, type: 3}
+  lastPlayedSound: 0
+  soundGap: 0.05
+  impactSoundClip: {fileID: 0}
 --- !u!114 &114895820252628600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -265,6 +270,25 @@ MonoBehaviour:
   screw: {fileID: 0}
   firstPhone: {fileID: 0}
   factoryScript: {fileID: 0}
+--- !u!114 &114976164522780064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1654522480949760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae69fd5474e553e4dba5a98df4f1353a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabSoundClip: {fileID: 0}
+  grabSound: {fileID: 0}
+  lastPlayedSound: 0
+  soundGap: 0.05
+  impactSoundClip: {fileID: 0}
+  rotationOffset: 0
+  m_grabbedBy: {fileID: 0}
+  isMovable: 1
 --- !u!212 &212141812883599938
 SpriteRenderer:
   m_ObjectHideFlags: 1

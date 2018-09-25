@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class ClockGrabbable : OVRGrabbable
 {
-
-
     public GameObject scriptManager;
 
     public override void GrabBegin(OVRGrabber hand, Collider grabPoint)

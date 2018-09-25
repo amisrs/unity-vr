@@ -39,7 +39,12 @@ public class BeginningController : MonoBehaviour {
     {
         if(allowContinue)
         {
-            if (!buttonPressed && (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger) || OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger)))
+            if (!buttonPressed && 
+                (
+                    (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger) || OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
+                    || Input.GetKeyDown(KeyCode.Mouse0)
+                )
+            )
             {
                 buttonPressed = true;
                 SceneManager.LoadScene(1);

@@ -21,6 +21,7 @@ limitations under the License.
 
 using System;
 using UnityEngine;
+using UnityEngine.XR;
 
 /// <summary>
 /// An object that can be grabbed and thrown by OVRGrabber.

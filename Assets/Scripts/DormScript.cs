@@ -12,9 +12,6 @@ public class DormScript : MonoBehaviour {
     }
 
     [SerializeField]
-    public GameObject player;
-
-    [SerializeField]
     GameObject clock;
     [SerializeField]
     GameObject door;
@@ -36,6 +33,9 @@ public class DormScript : MonoBehaviour {
     [SerializeField]
     public GameObject doorAudio;
 
+    bool alarmOff = false;
+    bool idGrabbed = false;
+
 
     // Use this for initialization
     void Start () {
@@ -51,8 +51,12 @@ public class DormScript : MonoBehaviour {
         GrabToTurnOff.SetActive(false);
 
         GrabID.SetActive(true);
+        alarmOff = true;
         // check ide grabbed
-
+        if(idGrabbed)
+        {
+            proceed();
+        }
 
     }
 
@@ -60,9 +64,18 @@ public class DormScript : MonoBehaviour {
     {
         Debug.Log("ID grabbed, opening door");
         GrabID.SetActive(false);
+
+        idGrabbed = true;
+        if(alarmOff)
+        {
+            proceed();
+        }
+    }
+
+    void proceed()
+    {
         doorAudio.GetComponent<AudioSource>().Play();
         door.GetComponent<DoorGrabbable>().UnlockDoor();
-
     }
 
     // turn off alarm

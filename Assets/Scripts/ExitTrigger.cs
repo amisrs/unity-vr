@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 
 public class ExitTrigger : MonoBehaviour {
     public DormScript dormScript;
+    public OVRScreenFade screenFadeVR;
     public OVRScreenFade screenFade;
+
+    private OVRScreenFade realScreenFade;
     private float fadeTime = 2.0f;
 
 	// Use this for initialization
@@ -15,7 +19,13 @@ public class ExitTrigger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(!XRSettings.enabled)
+        {
+            realScreenFade = screenFade;
+        } else
+        {
+            realScreenFade = screenFadeVR;
+        }
 	}
 
     private void OnTriggerEnter(Collider other)
@@ -44,7 +54,7 @@ public class ExitTrigger : MonoBehaviour {
 
     void FadeAndLoad(int scene)
     {
-        screenFade.FadeOut(fadeTime);
+        realScreenFade.FadeOut(fadeTime);
         StartCoroutine(WaitAndLoad(scene));
 //        float elapsedTime = 0.0f;
 

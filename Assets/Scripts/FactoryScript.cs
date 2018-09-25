@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
+using UnityStandardAssets.Characters.FirstPerson;
 using TMPro;
 
 public class FactoryScript : MonoBehaviour {
@@ -14,7 +16,10 @@ public class FactoryScript : MonoBehaviour {
     }
 
     [SerializeField]
+    public GameObject playerVR;
+    [SerializeField]
     public GameObject player;
+
 
     [SerializeField]
     GameObject chair;
@@ -99,9 +104,18 @@ public class FactoryScript : MonoBehaviour {
             // disable teleportation
             gameStage = GameStage.SITTING;
             player.transform.position = chair.GetComponent<Renderer>().bounds.center + chairOffset;
-            OVRPlayerController oVRPlayerController = player.GetComponent<OVRPlayerController>();
-            oVRPlayerController.SitDown();
-            oVRPlayerController.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+
+            if(XRSettings.enabled)
+            {
+                OVRPlayerController oVRPlayerController = playerVR.GetComponent<OVRPlayerController>();
+                oVRPlayerController.SitDown();
+                oVRPlayerController.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            } else
+            {
+                FirstPersonController firstPersonController = player.GetComponent<FirstPersonController>();
+                firstPersonController.SitDown();
+                firstPersonController.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            }
             GrabYourChair.SetActive(false);
             GrabAScrew.SetActive(true);
             Debug.Log("sit yourself");
@@ -219,14 +233,22 @@ public class FactoryScript : MonoBehaviour {
     public void finishWork()
     {
         Debug.Log("Moving trigger");
-        exitTrigger.ForceExit(3);
+        exitTrigger.ForceExit(4);
     }
 
     public void standUp()
     {
         gameStage = GameStage.LEAVING;
-        OVRPlayerController oVRPlayerController = player.GetComponent<OVRPlayerController>();
-        oVRPlayerController.StandUp();
+        if(XRSettings.enabled)
+        {
+            OVRPlayerController oVRPlayerController = playerVR.GetComponent<OVRPlayerController>();
+            oVRPlayerController.StandUp();
+
+        } else
+        {
+            FirstPersonController firstPersonController = player.GetComponent<FirstPersonController>();
+            firstPersonController.StandUp();
+        }
     }
 
     // Update is called once per frame

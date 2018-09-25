@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class ScrewController : MonoBehaviour
 {
@@ -17,8 +18,10 @@ public class ScrewController : MonoBehaviour
     [SerializeField]
     public ScrewState screwState;
 
-    private OVRGrabbable grabbableComponent;
-    private OVRGrabber grabber;
+    private OVRGrabbable grabbableComponentVR;
+    private MouseGrabbable grabbableComponent;
+    private OVRGrabber grabberVR;
+    private MouseGrabber grabber;
     private HingeJoint hingeJoint;
     private float depthPerDegree;
     private GameObject screwSlot;
@@ -28,8 +31,10 @@ public class ScrewController : MonoBehaviour
     {
         screwState = ScrewState.OPEN;
         placedRotation = Quaternion.Euler(0f, 0f, 0f);
-        grabbableComponent = GetComponent<OVRGrabbable>();
+        grabbableComponentVR = GetComponent<OVRGrabbable>();
+        grabbableComponent = GetComponent<MouseGrabbable>();
         depthPerDegree = 0.03f;
+        
     }
 
     // Update is called once per frame
@@ -54,17 +59,34 @@ public class ScrewController : MonoBehaviour
     {
         gameObject.layer = 10; //PlacedScrew layer, which ignores collision with ScrewedItem layer
 
+        if(XRSettings.enabled)
+        {
+            grabberVR = grabbableComponentVR.grabbedBy;
+            try
+            {
+                grabberVR.ForceRelease(grabbableComponentVR);
+            }
+            catch
+            {
+                Debug.Log("Tried to force grabber to release. It's probably NPE (next line will try print what it tried to release).");
+                Debug.Log("Tried to force release: " + grabbableComponent.gameObject.name);
+            }
 
-        grabber = grabbableComponent.grabbedBy;
-        try
+        } else
         {
-            grabber.ForceRelease(grabbableComponent);
-        } catch
-        {
-            Debug.Log("Tried to force grabber to release. It's probably NPE (next line will try print what it tried to release).");
-            Debug.Log("Tried to force release: " + grabbableComponent.gameObject.name);
+            grabber = grabbableComponent.m_grabbedBy;
+            try
+            {
+                grabber.GrabEnd();
+            }
+            catch
+            {
+                Debug.Log("Tried to force grabber to release. It's probably NPE (next line will try print what it tried to release).");
+                Debug.Log("Tried to force release: " + grabbableComponent.gameObject.name);
+            }
+
         }
-        
+
         gameObject.transform.SetPositionAndRotation(slot.transform.position, slot.transform.rotation * placedRotation);
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.mass = 0;
@@ -86,6 +108,7 @@ public class ScrewController : MonoBehaviour
         hingeJoint.connectedBody = gameObject.GetComponent<Rigidbody>();
 
         Destroy(grabbableComponent);
+        Destroy(grabbableComponentVR);
         //grabbableComponent.enabled = false;
     }
 

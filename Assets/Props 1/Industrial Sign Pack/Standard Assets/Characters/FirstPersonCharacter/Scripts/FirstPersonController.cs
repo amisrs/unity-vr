@@ -42,9 +42,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        private float temp_walkSpeed;
+        private float temp_runSpeed;
+        private float temp_height;
+
         // Use this for initialization
         private void Start()
         {
+            temp_walkSpeed = 1.75f;
+            temp_runSpeed = 3.5f;
+            temp_height = 1.2f;
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -63,11 +70,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RotateView();
             // the jump state needs to read here to make sure it is not missed
-            if (!m_Jump)
-            {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
-            }
-
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
             {
                 StartCoroutine(m_JumpBob.DoBobCycle());
@@ -81,6 +83,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+        }
+
+        public void SitDown()
+        {
+            m_WalkSpeed = 0.0f;
+            m_RunSpeed = 0.0f;
+            m_CharacterController.height = 1.0f;
+        }
+
+        public void StandUp()
+        {
+            m_WalkSpeed = temp_walkSpeed;
+            m_RunSpeed = temp_runSpeed;
+            m_CharacterController.height = temp_height;
         }
 
 
@@ -112,14 +128,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (m_CharacterController.isGrounded)
             {
                 m_MoveDir.y = -m_StickToGroundForce;
-
-                if (m_Jump)
-                {
-                    m_MoveDir.y = m_JumpSpeed;
-                    PlayJumpSound();
-                    m_Jump = false;
-                    m_Jumping = true;
-                }
             }
             else
             {
@@ -154,7 +162,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_NextStep = m_StepCycle + m_StepInterval;
 
-            PlayFootStepAudio();
+            //PlayFootStepAudio();
         }
 
 
