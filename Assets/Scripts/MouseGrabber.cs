@@ -128,7 +128,7 @@ public class MouseGrabber : MonoBehaviour {
                 crosshairImage.sprite = defaultCrosshair;
                 grabCandidate = null;
             }
-            //Debug.Log("Looking at: " + raycastHit.collider.gameObject.name);
+            Debug.Log("Looking at: " + raycastHit.collider.gameObject.name);
         } else
         {
             crosshairImage.sprite = defaultCrosshair;

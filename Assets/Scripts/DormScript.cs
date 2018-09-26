@@ -50,7 +50,7 @@ public class DormScript : MonoBehaviour {
         TurnOffAlarm.SetActive(false);
         GrabToTurnOff.SetActive(false);
 
-        GrabID.SetActive(true);
+        
         alarmOff = true;
         // check ide grabbed
         if(idGrabbed)
@@ -62,6 +62,7 @@ public class DormScript : MonoBehaviour {
 
     public void grabbedID()
     {
+
         Debug.Log("ID grabbed, opening door");
         GrabID.SetActive(false);
 

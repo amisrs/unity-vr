@@ -35,6 +35,12 @@ public class ArcVisualizer : MonoBehaviour {
 	protected void SetCurveVisuals() {
 		Color curveColor = Color.cyan;
 		curveColor.a = arcRaycaster.MakingContact ? 1.0f : 0.25f;
+        if(!arcRaycaster.MakingContact)
+        {
+            curveColor.r = 80.0f;
+            curveColor.b = 80.0f;
+            curveColor.g = 80.0f;
+        }
 		arcRenderer.startColor = curveColor;
 
 		if (contactIndicator != null && arcRaycaster != null) {

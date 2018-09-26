@@ -5,9 +5,10 @@ using UnityEngine.XR;
 using UnityStandardAssets.Characters.FirstPerson;
 using TMPro;
 
-public class FactoryScript : MonoBehaviour {
+public class FactoryScript : MonoBehaviour
+{
 
-   public enum GameStage
+    public enum GameStage
     {
         BEGIN,
         SITTING,
@@ -99,18 +100,19 @@ public class FactoryScript : MonoBehaviour {
 
     public void sitDown()
     {
-        if(gameStage == GameStage.BEGIN)
+        if (gameStage == GameStage.BEGIN)
         {
             // disable teleportation
             gameStage = GameStage.SITTING;
             player.transform.position = chair.GetComponent<Renderer>().bounds.center + chairOffset;
 
-            if(XRSettings.enabled)
+            if (XRSettings.enabled)
             {
                 OVRPlayerController oVRPlayerController = playerVR.GetComponent<OVRPlayerController>();
                 oVRPlayerController.SitDown();
                 oVRPlayerController.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-            } else
+            }
+            else
             {
                 FirstPersonController firstPersonController = player.GetComponent<FirstPersonController>();
                 firstPersonController.SitDown();
@@ -124,7 +126,7 @@ public class FactoryScript : MonoBehaviour {
 
     public void ScrewGrabbed()
     {
-        if(TutorialStage == 0)
+        if (TutorialStage == 0)
         {
             GrabAScrew.SetActive(false);
             PlaceTheScrew.SetActive(true);
@@ -134,7 +136,7 @@ public class FactoryScript : MonoBehaviour {
 
     public void FirstScrewPlaced()
     {
-        if(TutorialStage == 1)
+        if (TutorialStage == 1)
         {
             PlaceTheScrew.SetActive(false);
             GrabScrewdriver.SetActive(true);
@@ -144,7 +146,7 @@ public class FactoryScript : MonoBehaviour {
 
     public void ScrewdriverGrabbed()
     {
-        if(TutorialStage == 2)
+        if (TutorialStage == 2)
         {
             GrabScrewdriver.SetActive(false);
             TurnScrew.SetActive(true);
@@ -154,7 +156,7 @@ public class FactoryScript : MonoBehaviour {
 
     public void ScrewTurned()
     {
-        if(TutorialStage == 3)
+        if (TutorialStage == 3)
         {
             //phoneDingAudio.GetComponent<AudioSource>().Play();
             TurnScrew.SetActive(false);
@@ -169,9 +171,10 @@ public class FactoryScript : MonoBehaviour {
 
     public void startWork()
     {
-        if(gameStage == GameStage.SITTING)
+        if (gameStage == GameStage.SITTING)
         {
-            PlaceOnBelt.SetActive(false);
+            StartCoroutine(StartLastMessage(PlaceOnBelt, 10.0f));
+            //PlaceOnBelt.SetActive(false);
             gameStage = GameStage.WORKING;
             foreach (ConveyorController conveyor in conveyorControllers)
             {
@@ -179,7 +182,7 @@ public class FactoryScript : MonoBehaviour {
             }
             conveyorAudio.SetActive(true);
 
-            foreach(Spawner spawner in spawners)
+            foreach (Spawner spawner in spawners)
             {
                 spawner.setSpawnLimit(spawnLimit);
                 spawner.toggleRunning();
@@ -204,7 +207,8 @@ public class FactoryScript : MonoBehaviour {
             goodPhoneCount++;
             goodPhonesText.SetText(goodPhoneLabel, goodPhoneCount);
 
-        } else
+        }
+        else
         {
             Debug.Log("Counted bad phone.");
             badPhoneCount++;
@@ -212,7 +216,7 @@ public class FactoryScript : MonoBehaviour {
             //badPhonesText.SetText(badPhoneLabel, badPhoneCount);
         }
 
-        if(goodPhoneCount + badPhoneCount >= spawnLimit)
+        if (goodPhoneCount + badPhoneCount >= spawnLimit)
         {
             // all the phones are done.
         }
@@ -239,12 +243,13 @@ public class FactoryScript : MonoBehaviour {
     public void standUp()
     {
         gameStage = GameStage.LEAVING;
-        if(XRSettings.enabled)
+        if (XRSettings.enabled)
         {
             OVRPlayerController oVRPlayerController = playerVR.GetComponent<OVRPlayerController>();
             oVRPlayerController.StandUp();
 
-        } else
+        }
+        else
         {
             FirstPersonController firstPersonController = player.GetComponent<FirstPersonController>();
             firstPersonController.StandUp();
@@ -252,16 +257,31 @@ public class FactoryScript : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
-		if(isTimerOn)
+    void Update()
+    {
+        if (isTimerOn)
         {
             workTimer += Time.deltaTime;
 
-            if(workTimer >= maxWorkTime)
+            if (workTimer >= maxWorkTime)
             {
                 isTimerOn = false;
                 stopSpawning();
             }
         }
-	}
+    }
+
+    IEnumerator StartLastMessage(GameObject plate, float time)
+    {
+        plate.GetComponentInChildren<TextMeshPro>().fontSize = 0.2f;
+        plate.GetComponentInChildren<TextMeshPro>().SetText("More phones are on the way");
+        float elapsedTime = 0.0f;
+        while(elapsedTime < time)
+        {
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+        plate.SetActive(false);
+    }
 }

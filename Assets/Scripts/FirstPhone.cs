@@ -6,6 +6,8 @@ public class FirstPhone : MonoBehaviour {
 
     [SerializeField]
     FactoryScript factoryScript;
+    [SerializeField]
+    GameObject phoneLocation;
 
     private ScrewSlotController screwSlot;
     private bool isStarted;
@@ -32,12 +34,45 @@ public class FirstPhone : MonoBehaviour {
         factoryScript.screwedPhone();
     }
 
+    public void ReturnHome()
+    {
+        if(isStarted)
+        {
+            StartCoroutine(MoveToPosition(gameObject, 1.0f));
+        }
+    }
+
     private void OnCollisionStay(Collision collision)
     {
         if (!isStarted && collision.gameObject.layer == 9 && screwSlot.isScrewScrewed()) // conveyorlayer
         {
             factoryScript.startWork();
+            isStarted = true;
         }
             
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // return screwdriver to desk
+        if (collision.gameObject.layer == 14) // floor layer
+        {
+            StartCoroutine(MoveToPosition(gameObject, 1.0f));
+        }
+    }
+
+
+    IEnumerator MoveToPosition(GameObject phone, float time)
+    {
+        float elapsedTime = 0.0f;
+
+        while (elapsedTime < time)
+        {
+            phone.transform.position = Vector3.Lerp(phone.transform.position, phoneLocation.transform.position, elapsedTime / time);
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+    }
+
 }

@@ -25,6 +25,8 @@ public class ScrewController : MonoBehaviour
     private HingeJoint hingeJoint;
     private float depthPerDegree;
     private GameObject screwSlot;
+    private float goalRotation = 3600.0f;
+    private float currentRotation = 0.0f;
 
     // Use this for initialization
     void Start()
@@ -134,9 +136,10 @@ public class ScrewController : MonoBehaviour
             //Debug.Log("Gonna rotate screw: " + screwRotation.eulerAngles.z);
             
             gameObject.transform.Rotate(0f, 0f, -screwRotation.eulerAngles.z*80f, Space.Self);
+            currentRotation += screwRotation.eulerAngles.z * 80f;
             //Debug.Log("Also shoving the screw in z axis: " + depthPerDegree * screwRotation.eulerAngles.magnitude);
             hingeJoint.anchor += new Vector3(0f, 0f, depthPerDegree * (screwRotation.eulerAngles.magnitude / 150) * 40);
-            if (hingeJoint.anchor.z >= 30.0f)
+            if (hingeJoint.anchor.z >= 30.0f || currentRotation >= goalRotation)
             {
                 // finished screwing
                 Debug.Log("Finished screwing.");

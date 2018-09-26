@@ -59,7 +59,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4228723334705654}
   - component: {fileID: 65756444061009360}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ScrewheadTrigger
   m_TagString: ScrewheadTrigger
   m_Icon: {fileID: 0}

@@ -12,6 +12,8 @@ public class CardGrabbable : OVRGrabbable {
     private DormScript dormScript;
     [SerializeField]
     private bool isAttached = false;
+
+    private bool isReturning = false;
     private Quaternion rotation = Quaternion.Euler(80.08701f, 94.552f, 69.333f);
 
 
@@ -35,10 +37,10 @@ public class CardGrabbable : OVRGrabbable {
 
     private void FixedUpdate()
     {
-        if(isAttached)
+        if(isAttached && !isReturning && !isGrabbed)
         {
             gameObject.transform.position = cardLocation.transform.position;
-            gameObject.transform.rotation = cardLocation.transform.rotation;
+            gameObject.transform.rotation = rotation;
         }
     }
 
@@ -70,7 +72,7 @@ public class CardGrabbable : OVRGrabbable {
     IEnumerator MoveToPosition(GameObject card, float time)
     {
         float elapsedTime = 0.0f;
-        
+        isReturning = true;
         while(elapsedTime < time)
         {
             card.transform.position = Vector3.Lerp(card.transform.position, cardLocation.transform.position, elapsedTime/time);
@@ -79,6 +81,6 @@ public class CardGrabbable : OVRGrabbable {
             //Debug.Log("CardRotation: " + card.transform.rotation.ToString());
             yield return new WaitForEndOfFrame();
         }
-        
+        isReturning = false;
     }
 }

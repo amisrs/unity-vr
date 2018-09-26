@@ -260,8 +260,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arcRaycaster: {fileID: 114349850602347358}
   objectToMove: {fileID: 0}
+  screenFade: {fileID: 0}
   height: 1.29
   teleportedUpAxis: 0
+  lastTriggerState: 0
 --- !u!114 &114349850602347358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -277,7 +279,9 @@ MonoBehaviour:
   surfaceAngle: 5
   excludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4
+  MakingContact: 0
+  Normal: {x: 0, y: 0, z: 0}
   distance: 15
   dropHeight: 7
   controlHeight: 3
@@ -298,6 +302,7 @@ MonoBehaviour:
   contactIndicator: {fileID: 4630391176989818}
   directionIndicator: {fileID: 4918397481470448}
   segments: 40
+  lineMaterial: {fileID: 0}
 --- !u!120 &120530011997855020
 LineRenderer:
   m_ObjectHideFlags: 1
