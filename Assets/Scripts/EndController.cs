@@ -25,7 +25,7 @@ public class EndController : MonoBehaviour {
     private string adequatePerformanceString = 
         "Your performance is deemed acceptable, and you escape punishment.";
 
-    private string paymentString = "Performing that task for an 11 hour shift, you are paid the equivalent of $31.97 AUD.";
+    private string paymentString = "You perform that task for $2.91 AUD per hour, for an 11 hour shift. You are paid the equivalent of $31.97 AUD.";
     private string endString = "End of simulation.";
     // Use this for initialization
     void Start () {

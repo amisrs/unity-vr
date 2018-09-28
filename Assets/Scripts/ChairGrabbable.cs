@@ -9,7 +9,7 @@ public class ChairGrabbable : OVRGrabbable {
 
     public override void GrabBegin(OVRGrabber hand, Collider grabPoint)
     {
-        base.GrabBegin(hand, grabPoint);
+        //base.GrabBegin(hand, grabPoint);
         Debug.Log("Chair grab begin");
         FactoryScript factoryScript = scriptManager.GetComponent<FactoryScript>();
         factoryScript.sitDown();

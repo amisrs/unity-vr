@@ -37,6 +37,14 @@ public class DestroyerController : MonoBehaviour {
 
         if(other.gameObject.CompareTag("Conveyable"))
         {
+            ScrewSlotController ssc = other.gameObject.GetComponentInChildren<ScrewSlotController>();
+            if (ssc)
+            {
+                if(ssc.screw)
+                {
+                    Destroy(ssc.screw);
+                }                
+            }
             Destroy(other.gameObject);
         }
     }

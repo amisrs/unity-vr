@@ -13,6 +13,7 @@ public class MouseGrabbable : MonoBehaviour {
     public float soundGap = 0.05f;
 
     public AudioClip impactSoundClip;
+   
 
     [SerializeField]
     public float rotationOffset = 0.0f;
@@ -27,9 +28,14 @@ public class MouseGrabbable : MonoBehaviour {
 
     private void Awake()
     {
-        grabSound = gameObject.AddComponent<AudioSource>();
+        grabSound = gameObject.GetComponent<AudioSource>();
+        if (grabSound == null)
+        {
+            grabSound = gameObject.AddComponent<AudioSource>();
+        }
+
         grabSound.playOnAwake = false;
-        ONSPAudioSource oas = gameObject.AddComponent<ONSPAudioSource>();
+        ONSPAudioSource oas = gameObject.GetComponent<ONSPAudioSource>();
         oas.UseInvSqr = true;
 
         grabSoundClip = Resources.Load("grab_sound") as AudioClip;

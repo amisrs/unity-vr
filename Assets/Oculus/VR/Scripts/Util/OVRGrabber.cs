@@ -327,6 +327,11 @@ public class OVRGrabber : MonoBehaviour
 		foreach (OVRGrabbable grabbable in m_grabCandidates.Keys)
         {
             bool canGrab = !(grabbable.isGrabbed && !grabbable.allowOffhandGrab);
+            if(grabbable.isCardGrabbable)
+            {
+                continue;
+            }
+
             if (!canGrab)
             {
                 continue;
@@ -364,7 +369,10 @@ public class OVRGrabber : MonoBehaviour
 
             m_lastPos = transform.position;
             m_lastRot = transform.rotation;
-
+            if(m_grabbedObj == null)
+            {
+                return;
+            }
             // Set up offsets for grabbed object desired position relative to hand.
             if(m_grabbedObj.snapPosition)
             {

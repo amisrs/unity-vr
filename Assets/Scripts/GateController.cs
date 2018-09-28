@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
+using TMPro;
 
 public class GateController : MonoBehaviour {
     
@@ -16,6 +18,16 @@ public class GateController : MonoBehaviour {
     private Vector3 plateOffset;
     [SerializeField]
     private AudioSource beep;
+
+    [SerializeField]
+    private TextMeshProUGUI instruction;
+    [SerializeField]
+    private TextMeshProUGUI instructionVR;
+
+    
+
+    private string instruction1 = "Tap on to the gates";
+    private string instruction2 = "Enter the factory";
    
 
     private Quaternion targetRotation;
@@ -26,7 +38,13 @@ public class GateController : MonoBehaviour {
 	void Start () {
         //StartCoroutine(OpenGate());
         //tapText.SetActive(true);
-
+        if(XRSettings.enabled)
+        {
+            instructionVR.SetText(instruction1);
+        } else
+        {
+            instruction.SetText(instruction1);
+        }
     }
 
     // Update is called once per frame
@@ -38,6 +56,13 @@ public class GateController : MonoBehaviour {
     {
         if(!isGateOpen)
         {
+            if(XRSettings.enabled)
+            {
+                instructionVR.SetText(instruction2);
+            } else
+            {
+                instruction.SetText(instruction2);
+            }          
             tutorialText.SetActive(false);
             StartCoroutine(OpenGate());
             isGateOpen = true;

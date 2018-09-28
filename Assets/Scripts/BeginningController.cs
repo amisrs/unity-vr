@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 using TMPro;
 
 public class BeginningController : MonoBehaviour {
@@ -18,7 +19,9 @@ public class BeginningController : MonoBehaviour {
     private string text1String = "You are a worker at an electronics manufacturing factory.";
     private string text2String = "Your day begins in your dorm, owned by the factory.";
     private string text3String = "You get ready to leave your dorm and go to work at the factory.";
-    private string text4String = "Press the grab button to begin.";
+
+    private string text4VRButtonString = "Press the grab button to begin.";
+    private string text4ButtonString = "Press left click to begin.";
 
     private bool allowContinue = false;
     private bool buttonPressed = false;
@@ -29,7 +32,14 @@ public class BeginningController : MonoBehaviour {
         text1.SetText(text1String);
         text2.SetText(text2String);
         text3.SetText(text3String);
-        text4.SetText(text4String);
+
+        if (XRSettings.enabled)
+        {
+            text4.SetText(text4VRButtonString);
+        } else
+        {
+            text4.SetText(text4ButtonString);
+        }
 
         StartCoroutine(FadeRoutine());
     }

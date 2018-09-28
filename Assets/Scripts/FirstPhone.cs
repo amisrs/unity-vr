@@ -36,7 +36,7 @@ public class FirstPhone : MonoBehaviour {
 
     public void ReturnHome()
     {
-        if(isStarted)
+        if(!isStarted)
         {
             StartCoroutine(MoveToPosition(gameObject, 1.0f));
         }
@@ -54,7 +54,6 @@ public class FirstPhone : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        // return screwdriver to desk
         if (collision.gameObject.layer == 14) // floor layer
         {
             StartCoroutine(MoveToPosition(gameObject, 1.0f));

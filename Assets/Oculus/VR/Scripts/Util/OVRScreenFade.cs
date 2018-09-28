@@ -102,7 +102,7 @@ public class OVRScreenFade : MonoBehaviour
 
 		mesh.uv = uv;
 
-		SetFadeLevel(0);
+		SetFadeLevel(1);
 	}
 
     /// <summary>
@@ -148,8 +148,12 @@ public class OVRScreenFade : MonoBehaviour
 		if (!fadeOnStart)
 		{
 			SetFadeLevel(0);
-		}
-	}
+		} else
+        {
+            StartCoroutine(Fade(1, 0, fadeTime));
+
+        }
+    }
 
 	/// <summary>
 	/// Cleans up the fade material

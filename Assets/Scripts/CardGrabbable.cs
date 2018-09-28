@@ -13,13 +13,15 @@ public class CardGrabbable : OVRGrabbable {
     [SerializeField]
     private bool isAttached = false;
 
-    private bool isReturning = false;
+    public bool isReturning = false;
+    
     private Quaternion rotation = Quaternion.Euler(80.08701f, 94.552f, 69.333f);
 
 
 
     private void Start()
     {
+        isCardGrabbable = false;
         if(!XRSettings.enabled)
         {
             return;
@@ -28,7 +30,8 @@ public class CardGrabbable : OVRGrabbable {
         if(isAttached)
         {
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            StartCoroutine(MoveToPosition(gameObject, 0.1f));
+            //StartCoroutine(MoveToPosition(gameObject, 0.1f));
+            gameObject.transform.position = cardLocation.transform.position;
             
             gameObject.transform.parent = cardLocation.transform;
 
@@ -72,6 +75,7 @@ public class CardGrabbable : OVRGrabbable {
     IEnumerator MoveToPosition(GameObject card, float time)
     {
         float elapsedTime = 0.0f;
+        isCardGrabbable = true;
         isReturning = true;
         while(elapsedTime < time)
         {
@@ -82,5 +86,6 @@ public class CardGrabbable : OVRGrabbable {
             yield return new WaitForEndOfFrame();
         }
         isReturning = false;
+        isCardGrabbable = false;
     }
 }

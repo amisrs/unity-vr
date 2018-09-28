@@ -62,6 +62,8 @@ public class OVRGrabbable : MonoBehaviour
     protected float m_drag;
     protected OVRGrabber m_grabbedBy = null;
 
+    public bool isCardGrabbable = false;
+
 	/// <summary>
 	/// If true, the object can currently be grabbed.
 	/// </summary>
@@ -218,7 +220,11 @@ public class OVRGrabbable : MonoBehaviour
 
     void Awake()
     {
-        grabSound = gameObject.AddComponent<AudioSource>();
+        grabSound = gameObject.GetComponent<AudioSource>();
+        if(grabSound == null)
+        {
+            grabSound = gameObject.AddComponent<AudioSource>();
+        }
         grabSound.playOnAwake = false;
         ONSPAudioSource oas = gameObject.AddComponent<ONSPAudioSource>();
         oas.UseInvSqr = true;

@@ -46,6 +46,7 @@ public class MouseGrabber : MonoBehaviour {
 
     Ray ray;
     int layerMask;
+    
 
     bool m_useGravity;
     bool m_grabbedKinematic;
@@ -54,7 +55,12 @@ public class MouseGrabber : MonoBehaviour {
     // Use this for initialization
     void Start () {
         camera = GetComponent<Camera>();
-        layerMask = 1 << 2;
+        int layerMaskIgnoreRaycast = 1 << 2;
+        //layerMaskIgnoreRaycast = ~layerMaskIgnoreRaycast;
+        int layerMaskTelenope = 1 << 16;
+        //layerMaskTelenope = ~layerMaskTelenope;
+
+        layerMask = layerMaskIgnoreRaycast | layerMaskTelenope;
         layerMask = ~layerMask;
 	}
 	

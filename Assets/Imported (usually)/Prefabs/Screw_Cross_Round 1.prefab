@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114158980092430186}
   - component: {fileID: 114417420613255510}
   - component: {fileID: 114619510660102682}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Screw_Cross_Round 1
   m_TagString: Screw
   m_Icon: {fileID: 0}
