@@ -3955,6 +3955,7 @@ MonoBehaviour:
   lastPlayedSound: 0
   soundGap: 0.05
   impactSoundClip: {fileID: 0}
+  isCardGrabbable: 0
   scriptManager: {fileID: 1910708930}
 --- !u!1 &207665004
 GameObject:
@@ -19638,7 +19639,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4699647674446590, guid: 405df073db5d2e241bfc9dcd35f25eeb, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -4.589044
+      value: -5.1
       objectReference: {fileID: 0}
     - target: {fileID: 4699647674446590, guid: 405df073db5d2e241bfc9dcd35f25eeb, type: 2}
       propertyPath: m_LocalRotation.x
@@ -19646,7 +19647,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4699647674446590, guid: 405df073db5d2e241bfc9dcd35f25eeb, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.9859736
+      value: 0.7077911
       objectReference: {fileID: 0}
     - target: {fileID: 4699647674446590, guid: 405df073db5d2e241bfc9dcd35f25eeb, type: 2}
       propertyPath: m_LocalRotation.z
@@ -19654,7 +19655,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4699647674446590, guid: 405df073db5d2e241bfc9dcd35f25eeb, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.16690153
+      value: 0.7064219
       objectReference: {fileID: 0}
     - target: {fileID: 4699647674446590, guid: 405df073db5d2e241bfc9dcd35f25eeb, type: 2}
       propertyPath: m_RootOrder
@@ -19679,6 +19680,10 @@ Prefab:
         type: 2}
       propertyPath: maxGrabDistance
       value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699647674446590, guid: 405df073db5d2e241bfc9dcd35f25eeb, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90.11101
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405df073db5d2e241bfc9dcd35f25eeb, type: 2}
@@ -24202,6 +24207,27 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114335426182122574, guid: a6f4ee62af61131428d9056ccbc16a06,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469263672987144, guid: a6f4ee62af61131428d9056ccbc16a06, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773672613680408, guid: a6f4ee62af61131428d9056ccbc16a06, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638415894411756, guid: a6f4ee62af61131428d9056ccbc16a06, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638415894411756, guid: a6f4ee62af61131428d9056ccbc16a06, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 2.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 23413070108774934, guid: a6f4ee62af61131428d9056ccbc16a06,
         type: 2}
       propertyPath: m_Enabled
       value: 0

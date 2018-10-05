@@ -26,7 +26,9 @@ public class EndController : MonoBehaviour {
         "Your performance is deemed acceptable, and you escape punishment.";
 
     private string paymentString = "You perform that task for $2.91 AUD per hour, for an 11 hour shift. You are paid the equivalent of $31.97 AUD.";
-    private string endString = "End of simulation.";
+    private string endString = "Press any key to end the simulation.";
+
+    private bool allowEnd = false;
     // Use this for initialization
     void Start () {
         if(Stats.Goodphones == 1)
@@ -49,14 +51,25 @@ public class EndController : MonoBehaviour {
 
         paymentText.SetText(paymentString);
         endText.SetText(endString);
+        
 
         StartCoroutine(FadeRoutine());
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (allowEnd)
+        {
+            if (Input.anyKeyDown)
+            {
+                // exit and open browser to https://docs.google.com/forms/d/e/1FAIpQLSdjlGJ04QgOr55IJ8Cg2XXRpHA8hxg3hX39yPe439WGMoeq3g/viewform?usp=pp_url
+                Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSdjlGJ04QgOr55IJ8Cg2XXRpHA8hxg3hX39yPe439WGMoeq3g/viewform?usp=pp_url");
+                Application.Quit();
+
+            }
+        }
+    }
 
     IEnumerator FadeRoutine()
     {
@@ -69,6 +82,7 @@ public class EndController : MonoBehaviour {
         StartCoroutine(FadeInText(paymentText, 2.0f));
         yield return new WaitForSeconds(6.0f);
         StartCoroutine(FadeInText(endText, 2.0f));
+        allowEnd = true;
     }
 
     IEnumerator FadeInText(TextMeshPro textMesh, float time)

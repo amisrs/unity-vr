@@ -997,6 +997,7 @@ MonoBehaviour:
   lastPlayedSound: 0
   soundGap: 0.05
   impactSoundClip: {fileID: 0}
+  isCardGrabbable: 0
 --- !u!54 &154814160
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8633,6 +8634,7 @@ MonoBehaviour:
   lastPlayedSound: 0
   soundGap: 0.05
   impactSoundClip: {fileID: 0}
+  isCardGrabbable: 0
   scriptManager: {fileID: 1182085526}
 --- !u!64 &1163471656
 MeshCollider:
@@ -12206,22 +12208,22 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114717707954086888, guid: eedd57e32d92e00408893fe6b289bce5,
+    - target: {fileID: 114525264938024798, guid: eedd57e32d92e00408893fe6b289bce5,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114717707954086888, guid: eedd57e32d92e00408893fe6b289bce5,
+    - target: {fileID: 114525264938024798, guid: eedd57e32d92e00408893fe6b289bce5,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114525264938024798, guid: eedd57e32d92e00408893fe6b289bce5,
+    - target: {fileID: 114717707954086888, guid: eedd57e32d92e00408893fe6b289bce5,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114525264938024798, guid: eedd57e32d92e00408893fe6b289bce5,
+    - target: {fileID: 114717707954086888, guid: eedd57e32d92e00408893fe6b289bce5,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
@@ -12852,6 +12854,7 @@ MonoBehaviour:
   lastPlayedSound: 0
   soundGap: 0.05
   impactSoundClip: {fileID: 0}
+  isCardGrabbable: 0
 --- !u!114 &1740899345
 MonoBehaviour:
   m_ObjectHideFlags: 0

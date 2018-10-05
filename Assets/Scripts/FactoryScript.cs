@@ -73,7 +73,7 @@ public class FactoryScript : MonoBehaviour
     private string instruction4 = "Grab the screwdriver";
     private string instruction5 = "Turn the screw";
     private string instruction6 = "Place phone on belt";
-    private string instruction7 = "Keep going";
+    private string instruction7 = "Repeat.";
 
     [SerializeField]
     private GameObject GrabYourChair;
@@ -109,6 +109,8 @@ public class FactoryScript : MonoBehaviour
 
     private int TutorialStage = 0;
 
+    private bool isShiftHeld = false;
+
 
     // Use this for initialization
     void Start()
@@ -121,9 +123,11 @@ public class FactoryScript : MonoBehaviour
         if(XRSettings.enabled)
         {
             instructionVR.SetText(instruction1);
+            //playerVR.transform.LookAt(chair.gameObject.transform);
         } else
         {
             instruction.SetText(instruction1);
+            //player.transform.LookAt(chair.gameObject.transform);
         }
         
     }
@@ -355,6 +359,27 @@ public class FactoryScript : MonoBehaviour
                 isTimerOn = false;
                 stopSpawning();
             }
+        }
+
+        if(Input.GetKey(KeyCode.LeftShift)) {
+            isShiftHeld = true;
+        } else
+        {
+            isShiftHeld = false;
+        }
+
+        if(isShiftHeld && Input.GetKeyDown(KeyCode.F5))
+        {
+            workTimer = 0.25f * maxWorkTime;
+        } else if (Input.GetKeyDown(KeyCode.F6))
+        {
+            workTimer = 0.5f * maxWorkTime;
+        } else if (Input.GetKeyDown(KeyCode.F7))
+        {
+            workTimer = 0.75f * maxWorkTime;
+        } else if (Input.GetKeyDown(KeyCode.F8))
+        {
+            workTimer = 0.99f * maxWorkTime;
         }
 
         //playerVR.transform.position = chair.transform.position + chairOffsetVR;

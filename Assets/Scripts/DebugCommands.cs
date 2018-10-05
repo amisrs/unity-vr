@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.SceneManagement;
 
 public class DebugCommands : MonoBehaviour {
 
@@ -22,9 +23,11 @@ public class DebugCommands : MonoBehaviour {
     [SerializeField]
     private MouseGrabbable[] mouseGrabbables;
 
+    private bool isKeyPressed = false;
+    private bool isShiftPressed = false;
 	// Use this for initialization
 	void Start () {
-
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         if(XRSettings.enabled && canvas.activeInHierarchy) {
             canvas.SetActive(false);
@@ -50,11 +53,42 @@ public class DebugCommands : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		if(Input.GetKeyDown(KeyCode.F1))
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            
+            isShiftPressed = true;
+        }
+        else
+        {
+            isShiftPressed = false;
+        }
+        Debug.Log(isShiftPressed);
+
+        if (!isKeyPressed && Input.GetKey(KeyCode.F1) && Input.GetKey(KeyCode.LeftShift))
         {
             SetVREnabled(!XRSettings.enabled);
+            isKeyPressed = true;
         }
-	}
+
+        if(isShiftPressed && Input.GetKeyDown(KeyCode.F12))
+        {
+            // reset scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if(isShiftPressed && Input.GetKeyDown(KeyCode.F9))
+        {
+            // pause game
+            if(Time.timeScale == 0.0f)
+            {
+                Time.timeScale = 0.0f;
+            } else
+            {
+                Time.timeScale = 1.0f;
+            }
+        }        
+  	}
 
     void SetVREnabled(bool enabled)
     {

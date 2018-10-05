@@ -112,6 +112,15 @@ public class DormScript : MonoBehaviour {
 
     void proceed()
     {
+        if(gameStage != GameStage.LEAVING)
+        {
+            gameStage = GameStage.LEAVING;
+        } else
+        {
+            return;
+        }
+        
+
         if (XRSettings.enabled)
         {
             instructionVR.SetText(instruction3);

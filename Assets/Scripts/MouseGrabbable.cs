@@ -36,6 +36,10 @@ public class MouseGrabbable : MonoBehaviour {
 
         grabSound.playOnAwake = false;
         ONSPAudioSource oas = gameObject.GetComponent<ONSPAudioSource>();
+        if(oas == null)
+        {
+            oas = gameObject.AddComponent<ONSPAudioSource>();
+        }
         oas.UseInvSqr = true;
 
         grabSoundClip = Resources.Load("grab_sound") as AudioClip;
