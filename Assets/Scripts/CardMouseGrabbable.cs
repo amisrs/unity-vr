@@ -15,6 +15,7 @@ public class CardMouseGrabbable : MouseGrabbable {
 
     // Use this for initialization
     void Start () {
+        soundEnabled = false;
         if(XRSettings.enabled)
         {
             return;

@@ -242,6 +242,9 @@ public class OVRGrabber : MonoBehaviour
 
     protected void activateOutlineShader(GameObject outlinedObject)
     {
+        bool isScrewdriver = (outlinedObject.name == "Screwdriver_Cross");
+        Debug.Log("activating outlinedObjecT: " + outlinedObject.name);
+
         if (outlinedObject.GetComponent<OVRGrabbable>() != null)
         {
             Renderer renderer = outlinedObject.GetComponent<Renderer>();
@@ -250,7 +253,14 @@ public class OVRGrabber : MonoBehaviour
                 Material[] materials = outlinedObject.GetComponent<Renderer>().materials;
                 foreach (Material mat in materials)
                 {
-                    mat.shader = Shader.Find("Outlined/UltimateOutline");
+                    if (!isScrewdriver)
+                    {
+                        mat.shader = Shader.Find("Outlined/UltimateOutline");
+                    } else
+                    {
+                        mat.shader = Shader.Find("Custom/Overdraw");
+                    }
+
                 }
             }
         }
@@ -258,6 +268,8 @@ public class OVRGrabber : MonoBehaviour
 
     protected void deactivateOutlineShader(GameObject outlinedObject)
     {
+        bool isScrewdriver = (outlinedObject.name == "Screwdriver_Cross");
+        Debug.Log("deactivating outlinedObjecT: " + outlinedObject.name);
         if (outlinedObject.GetComponent<OVRGrabbable>() != null)
         {
             //Debug.Log("Deactivating outline shader for: " + outlinedObject.name);
@@ -267,7 +279,14 @@ public class OVRGrabber : MonoBehaviour
                 Material[] materials = outlinedObject.GetComponent<Renderer>().materials;
                 foreach (Material mat in materials)
                 {
-                    mat.shader = Shader.Find("Standard");
+                    if(!isScrewdriver)
+                    {
+                        Debug.Log("it's not a screwdriver");
+                        mat.shader = Shader.Find("Standard");
+                    } else
+                    {
+                        mat.shader = Shader.Find("Custom/Overdraw");
+                    }
                     //Debug.Log("Changed shader to Standard.");
                 }
             }

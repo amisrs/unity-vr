@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MouseGrabbable : MonoBehaviour {
     // referenced from OVRGrabbable
+    public bool soundEnabled = true;
 
     [SerializeField]
     public AudioClip grabSoundClip;
@@ -93,7 +94,7 @@ public class MouseGrabbable : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (lastPlayedSound > soundGap)
+        if (lastPlayedSound > soundGap && soundEnabled)
         {
             float relativeVelocity = collision.relativeVelocity.magnitude;
             ///Debug.Log(relativeVelocity);

@@ -22,6 +22,7 @@ public class CardGrabbable : OVRGrabbable {
     private void Start()
     {
         isCardGrabbable = false;
+        soundEnabled = false;
         if(!XRSettings.enabled)
         {
             return;

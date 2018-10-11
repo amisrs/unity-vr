@@ -25,7 +25,7 @@ public class ScrewController : MonoBehaviour
     private HingeJoint hingeJoint;
     private float depthPerDegree;
     private GameObject screwSlot;
-    private float goalRotation = 3600.0f;
+    private float goalRotation = 14400.0f;
     private float currentRotation = 0.0f;
 
     // Use this for initialization
@@ -35,7 +35,7 @@ public class ScrewController : MonoBehaviour
         placedRotation = Quaternion.Euler(0f, 0f, 0f);
         grabbableComponentVR = GetComponent<OVRGrabbable>();
         grabbableComponent = GetComponent<MouseGrabbable>();
-        depthPerDegree = 0.03f;
+        depthPerDegree = 0.0125f;
         
     }
 

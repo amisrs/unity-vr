@@ -19,7 +19,9 @@ public class GrabbableHighlighter : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<OVRGrabbable>() != null)
+        bool isScrewdriver = (other.gameObject.name == "Screwdriver_Cross");
+
+        if (other.gameObject.GetComponent<OVRGrabbable>() != null)
         {
             Renderer renderer = other.gameObject.GetComponent<Renderer>();
             if(renderer != null)
@@ -27,7 +29,10 @@ public class GrabbableHighlighter : MonoBehaviour {
                 Material[] materials = renderer.materials;
                 foreach (Material mat in materials)
                 {
-                    mat.shader = Shader.Find("Outlined/UltimateOutline");
+                    if(!isScrewdriver)
+                    {
+                        mat.shader = Shader.Find("Outlined/UltimateOutline");
+                    }
 
                     if (gameObject.layer == 11) //hell yeah hardcode screweditem layer
                     {
@@ -41,7 +46,9 @@ public class GrabbableHighlighter : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.GetComponent<OVRGrabbable>() != null)
+        bool isScrewdriver = (other.gameObject.name == "Screwdriver_Cross");
+
+        if (other.gameObject.GetComponent<OVRGrabbable>() != null)
         {
             Renderer renderer = other.gameObject.GetComponent<Renderer>();
             if(renderer != null)
@@ -49,7 +56,14 @@ public class GrabbableHighlighter : MonoBehaviour {
                 Material[] materials = other.gameObject.GetComponent<Renderer>().materials;
                 foreach (Material mat in materials)
                 {
-                    mat.shader = Shader.Find("Standard");
+                    if (!isScrewdriver)
+                    {
+                        mat.shader = Shader.Find("Standard");
+                    } else
+                    {
+                        mat.shader = Shader.Find("Custom/Overdraw");
+
+                    }
                 }
             }
 

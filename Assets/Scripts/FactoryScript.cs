@@ -107,6 +107,12 @@ public class FactoryScript : MonoBehaviour
     [SerializeField]
     private GameObject chairPosition;
 
+    [SerializeField]
+    private GameObject scrollTip;
+
+    [SerializeField]
+    private GameObject rotateTip;
+
     private int TutorialStage = 0;
 
     private bool isShiftHeld = false;
@@ -118,7 +124,7 @@ public class FactoryScript : MonoBehaviour
         
         conveyorControllers = FindObjectsOfType<ConveyorController>();
         spawners = FindObjectsOfType<Spawner>();
-        screwedPhoneLabel = "{0}/" + spawnLimit;
+        screwedPhoneLabel = "{0}";
         gameStage = GameStage.BEGIN;
         if(XRSettings.enabled)
         {
@@ -186,25 +192,25 @@ public class FactoryScript : MonoBehaviour
             GrabAScrew.SetActive(false);
             PlaceTheScrew.SetActive(true);
             TutorialStage = 1;
+            scrollTip.SetActive(true);
         }
     }
 
     public void FirstScrewPlaced()
     {
-        if (TutorialStage == 1)
+        if (XRSettings.enabled)
         {
-            if (XRSettings.enabled)
-            {
-                instructionVR.SetText(instruction4);
-            }
-            else
-            {
-                instruction.SetText(instruction4);
-            }
-
-            PlaceTheScrew.SetActive(false);
-            GrabScrewdriver.SetActive(true);
+            instructionVR.SetText(instruction4);
         }
+        else
+        {
+            instruction.SetText(instruction4);
+        }
+
+        GrabAScrew.SetActive(false);
+        PlaceTheScrew.SetActive(false);
+        GrabScrewdriver.SetActive(true);
+        scrollTip.SetActive(false);
         TutorialStage = 2;
     }
 
@@ -223,8 +229,10 @@ public class FactoryScript : MonoBehaviour
 
             GrabScrewdriver.SetActive(false);
             TurnScrew.SetActive(true);
+            rotateTip.SetActive(true);
+            TutorialStage = 3;
+
         }
-        TutorialStage = 3;
     }
 
     public void ScrewTurned()
@@ -243,8 +251,10 @@ public class FactoryScript : MonoBehaviour
             //phoneDingAudio.GetComponent<AudioSource>().Play();
             TurnScrew.SetActive(false);
             PlaceOnBelt.SetActive(true);
+            rotateTip.SetActive(false);
+            TutorialStage = 4;
+
         }
-        TutorialStage = 4;
     }
     //detect screw grabbed
     //detect screw placed

@@ -56,6 +56,7 @@ public class OVRGrabbable : MonoBehaviour
 
     public AudioClip impactSoundClip;
 
+    public bool soundEnabled = true;
     protected bool m_grabbedKinematic = false;
     protected bool m_useGravity = false;
     protected Collider m_grabbedCollider = null;
@@ -204,7 +205,7 @@ public class OVRGrabbable : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (lastPlayedSound > soundGap)
+        if (lastPlayedSound > soundGap && soundEnabled)
         {
             float relativeVelocity = collision.relativeVelocity.magnitude;
             ///Debug.Log(relativeVelocity);

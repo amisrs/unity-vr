@@ -25,7 +25,7 @@ public class EndController : MonoBehaviour {
     private string adequatePerformanceString = 
         "Your performance is deemed acceptable, and you escape punishment.";
 
-    private string paymentString = "You perform that task for $2.91 AUD per hour, for an 11 hour shift. You are paid the equivalent of $31.97 AUD.";
+    private string paymentString = "You perform that task for $2.91 AUD per hour, for an 11 hour shift. You are paid the equivalent of $31.97 AUD. \n\nYou performed the task for 10 minutes; every minute you spent is equal to over 1 hour of real time.";
     private string endString = "Press any key to end the simulation.";
 
     private bool allowEnd = false;
@@ -63,8 +63,7 @@ public class EndController : MonoBehaviour {
         {
             if (Input.anyKeyDown)
             {
-                // exit and open browser to https://docs.google.com/forms/d/e/1FAIpQLSdjlGJ04QgOr55IJ8Cg2XXRpHA8hxg3hX39yPe439WGMoeq3g/viewform?usp=pp_url
-                Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSdjlGJ04QgOr55IJ8Cg2XXRpHA8hxg3hX39yPe439WGMoeq3g/viewform?usp=pp_url");
+                Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSd82WRkfuTBm_jpC-FwyTqljQEthD_TNo9Wm6v6WHH8jIrvsg/viewform?usp=sf_link");
                 Application.Quit();
 
             }

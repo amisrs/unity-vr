@@ -24,12 +24,18 @@ public class DebugCommands : MonoBehaviour {
     private MouseGrabbable[] mouseGrabbables;
 
     private bool isKeyPressed = false;
-    private bool isShiftPressed = false;
+    private OVRPlayerController playerController;
+
+    [SerializeField]
+    public bool isShiftPressed = false;
+
 	// Use this for initialization
 	void Start () {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        if(XRSettings.enabled && canvas.activeInHierarchy) {
+        playerController = vrPlayer.GetComponent<OVRPlayerController>();
+
+        if (XRSettings.enabled && canvas.activeInHierarchy) {
             canvas.SetActive(false);
         }
 
@@ -77,17 +83,44 @@ public class DebugCommands : MonoBehaviour {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
+        if(isShiftPressed && Input.GetKeyDown(KeyCode.F10))
+        {
+            if(Time.timeScale == 1.0f)
+            {
+                Time.timeScale = 5.0f;
+            } else
+            {
+                Time.timeScale = 1.0f;
+            }
+        }
+
         if(isShiftPressed && Input.GetKeyDown(KeyCode.F9))
         {
             // pause game
             if(Time.timeScale == 0.0f)
             {
-                Time.timeScale = 0.0f;
+                Time.timeScale = 1.0f;
             } else
             {
-                Time.timeScale = 1.0f;
+                Time.timeScale = 0.0f;
             }
-        }        
+        }
+        
+        if(isShiftPressed && Input.GetKeyDown(KeyCode.F8))
+        {
+            if(playerController.Acceleration == 0.0f)
+            {
+                playerController.Acceleration = 0.1f;
+            } else
+            {
+                playerController.Acceleration = 0.0f;
+            }
+        }
+
+        if(isShiftPressed && Input.GetKeyDown(KeyCode.F7))
+        {
+            playerController.EnableRotation = !playerController.EnableRotation;
+        }
   	}
 
     void SetVREnabled(bool enabled)

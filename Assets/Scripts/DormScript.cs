@@ -39,6 +39,9 @@ public class DormScript : MonoBehaviour {
     [SerializeField]
     public TextMeshProUGUI instructionVR;
 
+    [SerializeField]
+    public GameObject hallTelenope;
+
     private string instruction1 = "Turn off the alarm";
     private string instruction2 = "Grab your ID";
     private string instruction3 = "Exit the dorms";
@@ -130,6 +133,7 @@ public class DormScript : MonoBehaviour {
             instruction.SetText(instruction3
                 );
         }
+        hallTelenope.SetActive(false);
         doorAudio.GetComponent<AudioSource>().Play();
         door.GetComponent<DoorGrabbable>().UnlockDoor();
     }

@@ -29,6 +29,13 @@ public class BeginningController : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        if(XRSettings.enabled)
+        {
+            Debug.Log("VR Device detected. Nice!");
+        } else
+        {
+            Debug.Log("No VR device. Bad!!");
+        }
         text1.SetText(text1String);
         text2.SetText(text2String);
         text3.SetText(text3String);
