@@ -54,6 +54,8 @@ public class FactoryScript : MonoBehaviour
     private TextMeshPro screwedPhonesText;
 
 
+    private int practicePhoneMax = 3;
+    private int practicePhoneCount = 0;
 
     private int screwedPhoneCount = 0;
 
@@ -256,10 +258,33 @@ public class FactoryScript : MonoBehaviour
 
         }
     }
+
+    public void countPracticePhone()
+    {
+        practicePhoneCount++;
+        if(practicePhoneCount == 1)
+        {
+            startConveyor();
+            PlaceOnBelt.GetComponent<TutorialText>().SetText("Repeat for all phones");
+        }
+        else if(practicePhoneCount == practicePhoneMax)
+        {
+            startWork();
+        }
+    }
     //detect screw grabbed
     //detect screw placed
     //detect screwdriver grabbed
     //detect screwed
+
+    public void startConveyor()
+    {
+        foreach (ConveyorController conveyor in conveyorControllers)
+        {
+            conveyor.toggleRunning();
+        }
+        conveyorAudio.SetActive(true);
+    }
 
     public void startWork()
     {
@@ -277,11 +302,6 @@ public class FactoryScript : MonoBehaviour
             StartCoroutine(StartLastMessage(PlaceOnBelt, 10.0f));
             //PlaceOnBelt.SetActive(false);
             gameStage = GameStage.WORKING;
-            foreach (ConveyorController conveyor in conveyorControllers)
-            {
-                conveyor.toggleRunning();
-            }
-            conveyorAudio.SetActive(true);
 
             foreach (Spawner spawner in spawners)
             {
@@ -398,7 +418,7 @@ public class FactoryScript : MonoBehaviour
     IEnumerator StartLastMessage(GameObject plate, float time)
     {
         plate.GetComponentInChildren<TextMeshPro>().fontSize = 0.2f;
-        plate.GetComponentInChildren<TextMeshPro>().SetText("More phones are on the way");
+        plate.GetComponentInChildren<TextMeshPro>().SetText("Work on the phones \n coming down the line");
         float elapsedTime = 0.0f;
         while(elapsedTime < time)
         {

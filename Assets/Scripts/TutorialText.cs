@@ -39,6 +39,10 @@ public class TutorialText : MonoBehaviour {
             realPlayer = player;
         }
     }
+    public void SetText(string text)
+    {
+        transform.Find("Content").GetComponentInChildren<TextMeshPro>().SetText(text);
+    }
 
     private void FixedUpdate()
     {

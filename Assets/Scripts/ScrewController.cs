@@ -28,6 +28,11 @@ public class ScrewController : MonoBehaviour
     private float goalRotation = 14400.0f;
     private float currentRotation = 0.0f;
 
+    [SerializeField]
+    private AudioSource screwSound;
+    [SerializeField]
+    private AudioClip screwSoundClip;
+
     // Use this for initialization
     void Start()
     {
@@ -36,7 +41,16 @@ public class ScrewController : MonoBehaviour
         grabbableComponentVR = GetComponent<OVRGrabbable>();
         grabbableComponent = GetComponent<MouseGrabbable>();
         depthPerDegree = 0.0125f;
-        
+        screwSound = gameObject.GetComponent<AudioSource>();
+        if (screwSound == null)
+        {
+            screwSound = gameObject.AddComponent<AudioSource>();
+        }
+        screwSound.playOnAwake = false;
+        ONSPAudioSource oas = gameObject.AddComponent<ONSPAudioSource>();
+        oas.UseInvSqr = true;
+        screwSoundClip = Resources.Load("screw_sound") as AudioClip;
+
     }
 
     // Update is called once per frame
@@ -139,6 +153,10 @@ public class ScrewController : MonoBehaviour
             currentRotation += screwRotation.eulerAngles.z * 80f;
             //Debug.Log("Also shoving the screw in z axis: " + depthPerDegree * screwRotation.eulerAngles.magnitude);
             hingeJoint.anchor += new Vector3(0f, 0f, depthPerDegree * (screwRotation.eulerAngles.magnitude / 150) * 40);
+
+            // play noise
+            screwSound.PlayOneShot(screwSoundClip);
+
             if (hingeJoint.anchor.z >= 30.0f || currentRotation >= goalRotation)
             {
                 // finished screwing

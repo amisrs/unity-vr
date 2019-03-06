@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 
 public class EndController : MonoBehaviour {
+    List<Transform> texts = new List<Transform>();
+
     [SerializeField]
     private TextMeshPro goodPhonesText;
     [SerializeField]
@@ -25,13 +27,19 @@ public class EndController : MonoBehaviour {
     private string adequatePerformanceString = 
         "Your performance is deemed acceptable, and you escape punishment.";
 
-    private string paymentString = "You perform that task for $2.91 AUD per hour, for an 11 hour shift. You are paid the equivalent of $31.97 AUD. \n\nYou performed the task for 10 minutes; every minute you spent is equal to over 1 hour of real time.";
+    private string paymentString = "You perform that task for $2.91 AUD per hour, for a 10 hour shift. You are paid the equivalent of $31.97 AUD. \n\nYou performed the task for 10 minutes; every minute you spent is equal to over 1 hour of real time.";
     private string endString = "Press any key to end the simulation.";
 
     private bool allowEnd = false;
     // Use this for initialization
     void Start () {
-        if(Stats.Goodphones == 1)
+        texts.Add(goodPhonesText.transform);
+        texts.Add(badPhonesText.transform);
+        texts.Add(performanceText.transform);
+        texts.Add(paymentText.transform);
+        texts.Add(endText.transform);
+
+        if (Stats.Goodphones == 1)
         {
             goodPhonesText.SetText(goodPhoneString, Stats.Goodphones);
         } else
@@ -68,6 +76,11 @@ public class EndController : MonoBehaviour {
 
             }
         }
+        foreach (Transform text in texts)
+        {
+            // set it to be in front of the ovrcamera
+        }
+
     }
 
     IEnumerator FadeRoutine()

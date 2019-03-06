@@ -3,6 +3,155 @@ guid: 302d2d7ec583d74499ac4f40eb87f449
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
+    100000: AsMan0002-M3-CS_Footsteps
+    100002: AsMan0002-M3-CS_Head
+    100004: AsMan0002-M3-CS_HeadNub
+    100006: AsMan0002-M3-CS_Hips
+    100008: AsMan0002-M3-CS_LeftArm
+    100010: AsMan0002-M3-CS_LeftFoot
+    100012: AsMan0002-M3-CS_LeftForeArm
+    100014: AsMan0002-M3-CS_LeftHand
+    100016: AsMan0002-M3-CS_LeftHandIndex1
+    100018: AsMan0002-M3-CS_LeftHandIndex2
+    100020: AsMan0002-M3-CS_LeftHandIndex3
+    100022: AsMan0002-M3-CS_LeftHandIndexNub
+    100024: AsMan0002-M3-CS_LeftHandMiddle1
+    100026: AsMan0002-M3-CS_LeftHandMiddle2
+    100028: AsMan0002-M3-CS_LeftHandMiddle3
+    100030: AsMan0002-M3-CS_LeftHandMiddleNub
+    100032: AsMan0002-M3-CS_LeftHandPinky1
+    100034: AsMan0002-M3-CS_LeftHandPinky2
+    100036: AsMan0002-M3-CS_LeftHandPinky3
+    100038: AsMan0002-M3-CS_LeftHandPinkyNub
+    100040: AsMan0002-M3-CS_LeftHandRing1
+    100042: AsMan0002-M3-CS_LeftHandRing2
+    100044: AsMan0002-M3-CS_LeftHandRing3
+    100046: AsMan0002-M3-CS_LeftHandRingNub
+    100048: AsMan0002-M3-CS_LeftHandThumb1
+    100050: AsMan0002-M3-CS_LeftHandThumb2
+    100052: AsMan0002-M3-CS_LeftHandThumb3
+    100054: AsMan0002-M3-CS_LeftHandThumbNub
+    100056: AsMan0002-M3-CS_LeftLeg
+    100058: AsMan0002-M3-CS_LeftShoulder
+    100060: AsMan0002-M3-CS_LeftToeBase
+    100062: AsMan0002-M3-CS_LeftToeBaseNub
+    100064: AsMan0002-M3-CS_LeftUpLeg
+    100066: AsMan0002-M3-CS_Mesh
+    100068: AsMan0002-M3-CS_Neck
+    100070: AsMan0002-M3-CS_RightArm
+    100072: AsMan0002-M3-CS_RightFoot
+    100074: AsMan0002-M3-CS_RightForeArm
+    100076: AsMan0002-M3-CS_RightHand
+    100078: AsMan0002-M3-CS_RightHandIndex1
+    100080: AsMan0002-M3-CS_RightHandIndex2
+    100082: AsMan0002-M3-CS_RightHandIndex3
+    100084: AsMan0002-M3-CS_RightHandIndexNub
+    100086: AsMan0002-M3-CS_RightHandMiddle1
+    100088: AsMan0002-M3-CS_RightHandMiddle2
+    100090: AsMan0002-M3-CS_RightHandMiddle3
+    100092: AsMan0002-M3-CS_RightHandMiddleNub
+    100094: AsMan0002-M3-CS_RightHandPinky1
+    100096: AsMan0002-M3-CS_RightHandPinky2
+    100098: AsMan0002-M3-CS_RightHandPinky3
+    100100: AsMan0002-M3-CS_RightHandPinkyNub
+    100102: AsMan0002-M3-CS_RightHandRing1
+    100104: AsMan0002-M3-CS_RightHandRing2
+    100106: AsMan0002-M3-CS_RightHandRing3
+    100108: AsMan0002-M3-CS_RightHandRingNub
+    100110: AsMan0002-M3-CS_RightHandThumb1
+    100112: AsMan0002-M3-CS_RightHandThumb2
+    100114: AsMan0002-M3-CS_RightHandThumb3
+    100116: AsMan0002-M3-CS_RightHandThumbNub
+    100118: AsMan0002-M3-CS_RightLeg
+    100120: AsMan0002-M3-CS_RightShoulder
+    100122: AsMan0002-M3-CS_RightToeBase
+    100124: AsMan0002-M3-CS_RightToeBaseNub
+    100126: AsMan0002-M3-CS_RightUpLeg
+    100128: AsMan0002-M3-CS_Spine
+    100130: AsMan0002-M3-CS_Spine1
+    100132: AsMan0002-M3-CS_Spine2
+    100134: AsMan0002-M3-CS_Spine3
+    100136: AsMan0002-M3-CS_Spine4
+    100138: //RootNode
+    400000: AsMan0002-M3-CS_Footsteps
+    400002: AsMan0002-M3-CS_Head
+    400004: AsMan0002-M3-CS_HeadNub
+    400006: AsMan0002-M3-CS_Hips
+    400008: AsMan0002-M3-CS_LeftArm
+    400010: AsMan0002-M3-CS_LeftFoot
+    400012: AsMan0002-M3-CS_LeftForeArm
+    400014: AsMan0002-M3-CS_LeftHand
+    400016: AsMan0002-M3-CS_LeftHandIndex1
+    400018: AsMan0002-M3-CS_LeftHandIndex2
+    400020: AsMan0002-M3-CS_LeftHandIndex3
+    400022: AsMan0002-M3-CS_LeftHandIndexNub
+    400024: AsMan0002-M3-CS_LeftHandMiddle1
+    400026: AsMan0002-M3-CS_LeftHandMiddle2
+    400028: AsMan0002-M3-CS_LeftHandMiddle3
+    400030: AsMan0002-M3-CS_LeftHandMiddleNub
+    400032: AsMan0002-M3-CS_LeftHandPinky1
+    400034: AsMan0002-M3-CS_LeftHandPinky2
+    400036: AsMan0002-M3-CS_LeftHandPinky3
+    400038: AsMan0002-M3-CS_LeftHandPinkyNub
+    400040: AsMan0002-M3-CS_LeftHandRing1
+    400042: AsMan0002-M3-CS_LeftHandRing2
+    400044: AsMan0002-M3-CS_LeftHandRing3
+    400046: AsMan0002-M3-CS_LeftHandRingNub
+    400048: AsMan0002-M3-CS_LeftHandThumb1
+    400050: AsMan0002-M3-CS_LeftHandThumb2
+    400052: AsMan0002-M3-CS_LeftHandThumb3
+    400054: AsMan0002-M3-CS_LeftHandThumbNub
+    400056: AsMan0002-M3-CS_LeftLeg
+    400058: AsMan0002-M3-CS_LeftShoulder
+    400060: AsMan0002-M3-CS_LeftToeBase
+    400062: AsMan0002-M3-CS_LeftToeBaseNub
+    400064: AsMan0002-M3-CS_LeftUpLeg
+    400066: AsMan0002-M3-CS_Mesh
+    400068: AsMan0002-M3-CS_Neck
+    400070: AsMan0002-M3-CS_RightArm
+    400072: AsMan0002-M3-CS_RightFoot
+    400074: AsMan0002-M3-CS_RightForeArm
+    400076: AsMan0002-M3-CS_RightHand
+    400078: AsMan0002-M3-CS_RightHandIndex1
+    400080: AsMan0002-M3-CS_RightHandIndex2
+    400082: AsMan0002-M3-CS_RightHandIndex3
+    400084: AsMan0002-M3-CS_RightHandIndexNub
+    400086: AsMan0002-M3-CS_RightHandMiddle1
+    400088: AsMan0002-M3-CS_RightHandMiddle2
+    400090: AsMan0002-M3-CS_RightHandMiddle3
+    400092: AsMan0002-M3-CS_RightHandMiddleNub
+    400094: AsMan0002-M3-CS_RightHandPinky1
+    400096: AsMan0002-M3-CS_RightHandPinky2
+    400098: AsMan0002-M3-CS_RightHandPinky3
+    400100: AsMan0002-M3-CS_RightHandPinkyNub
+    400102: AsMan0002-M3-CS_RightHandRing1
+    400104: AsMan0002-M3-CS_RightHandRing2
+    400106: AsMan0002-M3-CS_RightHandRing3
+    400108: AsMan0002-M3-CS_RightHandRingNub
+    400110: AsMan0002-M3-CS_RightHandThumb1
+    400112: AsMan0002-M3-CS_RightHandThumb2
+    400114: AsMan0002-M3-CS_RightHandThumb3
+    400116: AsMan0002-M3-CS_RightHandThumbNub
+    400118: AsMan0002-M3-CS_RightLeg
+    400120: AsMan0002-M3-CS_RightShoulder
+    400122: AsMan0002-M3-CS_RightToeBase
+    400124: AsMan0002-M3-CS_RightToeBaseNub
+    400126: AsMan0002-M3-CS_RightUpLeg
+    400128: AsMan0002-M3-CS_Spine
+    400130: AsMan0002-M3-CS_Spine1
+    400132: AsMan0002-M3-CS_Spine2
+    400134: AsMan0002-M3-CS_Spine3
+    400136: AsMan0002-M3-CS_Spine4
+    400138: //RootNode
+    2100000: AsMan0002-M3-CS_Cloths&Stuff
+    2100002: AsMan0002-M3-CS_Skin
+    2100004: AsMan0002-M3-CS_Head
+    2100006: AsMan0002-M3-CS_Eyes&Mouth
+    2100008: AsMan0002-M3-CS_Hair
+    4300000: AsMan0002-M3-CS_Mesh
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: AsMan0002-M3-CS_Mesh
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -38,6 +187,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -56,12 +206,15 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -76,7 +229,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

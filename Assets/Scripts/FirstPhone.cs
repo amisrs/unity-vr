@@ -46,7 +46,7 @@ public class FirstPhone : MonoBehaviour {
     {
         if (!isStarted && collision.gameObject.layer == 9 && screwSlot.isScrewScrewed()) // conveyorlayer
         {
-            factoryScript.startWork();
+            factoryScript.countPracticePhone();
             isStarted = true;
         }
             
