@@ -8,7 +8,7 @@ public class CardLocationController : MonoBehaviour {
     private GameObject camera;
 
     [SerializeField]
-    private Vector3 yOffsetVR = new Vector3(-0.2f, 0.0f, -0.1f);
+    private Vector3 yOffsetVR = new Vector3(-0.59f, 0.0f, -0.62f);
 
     [SerializeField]
     private Vector3 yOffset = new Vector3(0.17f, -0.32f, -0.08f);

@@ -3930,6 +3930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1fe9ae7420e37a44ae677ed18e2fcc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEnabled: 1
   grabSoundClip: {fileID: 0}
   grabSound: {fileID: 0}
   lastPlayedSound: 0
@@ -3960,6 +3961,7 @@ MonoBehaviour:
   lastPlayedSound: 0
   soundGap: 0.05
   impactSoundClip: {fileID: 0}
+  soundEnabled: 1
   isCardGrabbable: 0
   scriptManager: {fileID: 1910708930}
 --- !u!1 &207665004
@@ -4589,6 +4591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae69fd5474e553e4dba5a98df4f1353a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEnabled: 1
   grabSoundClip: {fileID: 0}
   grabSound: {fileID: 0}
   lastPlayedSound: 0
@@ -6252,6 +6255,119 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomFloat: 0
   nextRandomFloat: 0
+--- !u!1001 &413268225
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4717141793915726, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -19.3392
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717141793915726, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.926
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717141793915726, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -3.644
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717141793915726, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717141793915726, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717141793915726, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717141793915726, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717141793915726, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114895820252628600, guid: 7b1a648250981454d8b2e7a9beb954aa,
+        type: 2}
+      propertyPath: firstPhone
+      value: 
+      objectReference: {fileID: 413268228}
+    - target: {fileID: 4897754500105992, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728153689990372, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23201798333323650, guid: 7b1a648250981454d8b2e7a9beb954aa,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 18361bf040596a94388912caba3f4104, type: 2}
+    - target: {fileID: 65321309263140026, guid: 7b1a648250981454d8b2e7a9beb954aa,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65321309263140026, guid: 7b1a648250981454d8b2e7a9beb954aa,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654522480949760, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_Name
+      value: phonedecimated (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114976164522780064, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1 &413268226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1654522480949760, guid: 7b1a648250981454d8b2e7a9beb954aa,
+    type: 2}
+  m_PrefabInternal: {fileID: 413268225}
+--- !u!114 &413268227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 413268226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae69fd5474e553e4dba5a98df4f1353a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEnabled: 1
+  grabSoundClip: {fileID: 0}
+  grabSound: {fileID: 0}
+  lastPlayedSound: 0
+  soundGap: 0.05
+  impactSoundClip: {fileID: 0}
+  rotationOffset: 0
+  m_grabbedBy: {fileID: 0}
+  isMovable: 1
+--- !u!114 &413268228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 413268226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666674f02a005c04d9160902cdf1a961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  factoryScript: {fileID: 1910708932}
+  phoneLocation: {fileID: 803707356}
 --- !u!1001 &422654160
 Prefab:
   m_ObjectHideFlags: 0
@@ -24375,6 +24491,119 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce9b2cf3b5e84e44ba6d3bb58ae9e7a9, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &1710564435
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4717141793915726, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -19.1477
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717141793915726, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.926
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717141793915726, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -3.644
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717141793915726, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717141793915726, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717141793915726, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717141793915726, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717141793915726, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 114895820252628600, guid: 7b1a648250981454d8b2e7a9beb954aa,
+        type: 2}
+      propertyPath: firstPhone
+      value: 
+      objectReference: {fileID: 1710564438}
+    - target: {fileID: 4897754500105992, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728153689990372, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23201798333323650, guid: 7b1a648250981454d8b2e7a9beb954aa,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 18361bf040596a94388912caba3f4104, type: 2}
+    - target: {fileID: 65321309263140026, guid: 7b1a648250981454d8b2e7a9beb954aa,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65321309263140026, guid: 7b1a648250981454d8b2e7a9beb954aa,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654522480949760, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+      propertyPath: m_Name
+      value: phonedecimated (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114976164522780064, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: 7b1a648250981454d8b2e7a9beb954aa, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1 &1710564436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1654522480949760, guid: 7b1a648250981454d8b2e7a9beb954aa,
+    type: 2}
+  m_PrefabInternal: {fileID: 1710564435}
+--- !u!114 &1710564437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710564436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae69fd5474e553e4dba5a98df4f1353a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEnabled: 1
+  grabSoundClip: {fileID: 0}
+  grabSound: {fileID: 0}
+  lastPlayedSound: 0
+  soundGap: 0.05
+  impactSoundClip: {fileID: 0}
+  rotationOffset: 0
+  m_grabbedBy: {fileID: 0}
+  isMovable: 1
+--- !u!114 &1710564438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710564436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666674f02a005c04d9160902cdf1a961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  factoryScript: {fileID: 1910708932}
+  phoneLocation: {fileID: 803707356}
 --- !u!1 &1712852166 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1010526778699696, guid: ce9b2cf3b5e84e44ba6d3bb58ae9e7a9,
@@ -29522,6 +29751,7 @@ MonoBehaviour:
   maxWorkTime: 600
   goodPhonesText: {fileID: 1462749526}
   screwedPhonesText: {fileID: 1217617991}
+  practicePhoneCount: 0
   badPhoneCount: 0
   goodPhoneCount: 0
   GrabYourChair: {fileID: 1063436866}
@@ -29557,6 +29787,7 @@ MonoBehaviour:
   card: {fileID: 0}
   oVRGrabbables: []
   mouseGrabbables: []
+  isShiftPressed: 0
 --- !u!1 &1911773384 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1010526778699696, guid: ce9b2cf3b5e84e44ba6d3bb58ae9e7a9,

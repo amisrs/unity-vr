@@ -28,6 +28,11 @@ public class ScrewController : MonoBehaviour
     private float goalRotation = 14400.0f;
     private float currentRotation = 0.0f;
 
+    [SerializeField]
+    private AudioSource screwSound;
+    [SerializeField]
+    private AudioClip screwSoundClip;
+
     // Use this for initialization
     void Start()
     {
@@ -36,7 +41,16 @@ public class ScrewController : MonoBehaviour
         grabbableComponentVR = GetComponent<OVRGrabbable>();
         grabbableComponent = GetComponent<MouseGrabbable>();
         depthPerDegree = 0.0125f;
-        
+        screwSound = gameObject.GetComponent<AudioSource>();
+        if (screwSound == null)
+        {
+            screwSound = gameObject.AddComponent<AudioSource>();
+        }
+        screwSound.playOnAwake = false;
+        ONSPAudioSource oas = gameObject.AddComponent<ONSPAudioSource>();
+        oas.UseInvSqr = true;
+        screwSoundClip = Resources.Load("screw_sound") as AudioClip;
+
     }
 
     // Update is called once per frame
@@ -47,21 +61,22 @@ public class ScrewController : MonoBehaviour
 
     public void placeScrew(GameObject slot)
     {
-        if(screwState == ScrewState.OPEN) {
+        if (screwState == ScrewState.OPEN)
+        {
             setScrewState(ScrewState.PLACED);
             Debug.Log("get placed son");
             screwSlot = slot;
             becomeScrewed(slot);
             toggleArrows(true);
         }
-        
+
     }
 
     public void becomeScrewed(GameObject slot)
     {
         gameObject.layer = 10; //PlacedScrew layer, which ignores collision with ScrewedItem layer
 
-        if(XRSettings.enabled)
+        if (XRSettings.enabled)
         {
             grabberVR = grabbableComponentVR.grabbedBy;
             try
@@ -74,7 +89,8 @@ public class ScrewController : MonoBehaviour
                 Debug.Log("Tried to force release: " + grabbableComponent.gameObject.name);
             }
 
-        } else
+        }
+        else
         {
             grabber = grabbableComponent.m_grabbedBy;
             try
@@ -106,7 +122,7 @@ public class ScrewController : MonoBehaviour
         hingeJoint.axis = Vector3.forward;
         hingeJoint.connectedAnchor = Vector3.zero;
 
-        
+
         hingeJoint.connectedBody = gameObject.GetComponent<Rigidbody>();
 
         Destroy(grabbableComponent);
@@ -118,7 +134,7 @@ public class ScrewController : MonoBehaviour
     // every 1 degree clockwise, do screwIn
     public void setScrewStateScrewing(GameObject screwdriver)
     {
-        if(screwState == ScrewState.PLACED)
+        if (screwState == ScrewState.PLACED)
         {
             hingeJoint.autoConfigureConnectedAnchor = false;
             screwState = ScrewState.SCREWING;
@@ -131,14 +147,18 @@ public class ScrewController : MonoBehaviour
     // rotate clockwise and sink in
     public void screwIn(Quaternion screwRotation)
     {
-        if(screwState == ScrewState.SCREWING)
+        if (screwState == ScrewState.SCREWING)
         {
             //Debug.Log("Gonna rotate screw: " + screwRotation.eulerAngles.z);
-            
-            gameObject.transform.Rotate(0f, 0f, -screwRotation.eulerAngles.z*80f, Space.Self);
+
+            gameObject.transform.Rotate(0f, 0f, -screwRotation.eulerAngles.z * 80f, Space.Self);
             currentRotation += screwRotation.eulerAngles.z * 80f;
             //Debug.Log("Also shoving the screw in z axis: " + depthPerDegree * screwRotation.eulerAngles.magnitude);
             hingeJoint.anchor += new Vector3(0f, 0f, depthPerDegree * (screwRotation.eulerAngles.magnitude / 150) * 40);
+
+            // play noise
+            screwSound.PlayOneShot(screwSoundClip);
+
             if (hingeJoint.anchor.z >= 30.0f || currentRotation >= goalRotation)
             {
                 // finished screwing
@@ -151,7 +171,8 @@ public class ScrewController : MonoBehaviour
                 //gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 //gameObject.GetComponent<MeshCollider>().enabled = false;
             }
-        } else
+        }
+        else
         {
             Debug.Log("Trying to screw screwed screw.");
         }

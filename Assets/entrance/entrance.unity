@@ -7291,6 +7291,7 @@ MonoBehaviour:
   card: {fileID: 0}
   oVRGrabbables: []
   mouseGrabbables: []
+  isShiftPressed: 0
 --- !u!4 &211571868
 Transform:
   m_ObjectHideFlags: 0
@@ -38157,8 +38158,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1067322221}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.83, y: -2.210106, z: -39.168518}
-  m_LocalScale: {x: 3.27, y: 8.83, z: 3.05}
+  m_LocalPosition: {x: 2.66, y: -2.210106, z: -45.02}
+  m_LocalScale: {x: 9.55, y: 12, z: 18.51}
   m_Children: []
   m_Father: {fileID: 1545974547}
   m_RootOrder: 11
@@ -62365,6 +62366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6319e2dc178fe4f4885b758c994d8eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEnabled: 1
   grabSoundClip: {fileID: 0}
   grabSound: {fileID: 0}
   lastPlayedSound: 0
@@ -74487,15 +74489,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4441897348695858, guid: 65e9e77056ae2f348991d42e40c6801b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.5490036
+      value: 2.49
       objectReference: {fileID: 0}
     - target: {fileID: 4441897348695858, guid: 65e9e77056ae2f348991d42e40c6801b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.3701057
+      value: -5.370106
       objectReference: {fileID: 0}
     - target: {fileID: 4441897348695858, guid: 65e9e77056ae2f348991d42e40c6801b, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -39.43852
+      value: -45.12
       objectReference: {fileID: 0}
     - target: {fileID: 4441897348695858, guid: 65e9e77056ae2f348991d42e40c6801b, type: 2}
       propertyPath: m_LocalRotation.x
@@ -74503,7 +74505,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4441897348695858, guid: 65e9e77056ae2f348991d42e40c6801b, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.70715106
       objectReference: {fileID: 0}
     - target: {fileID: 4441897348695858, guid: 65e9e77056ae2f348991d42e40c6801b, type: 2}
       propertyPath: m_LocalRotation.z
@@ -74511,7 +74513,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4441897348695858, guid: 65e9e77056ae2f348991d42e40c6801b, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.70706254
       objectReference: {fileID: 0}
     - target: {fileID: 4441897348695858, guid: 65e9e77056ae2f348991d42e40c6801b, type: 2}
       propertyPath: m_RootOrder
@@ -74532,6 +74534,10 @@ Prefab:
     - target: {fileID: 1084454877378156, guid: 65e9e77056ae2f348991d42e40c6801b, type: 2}
       propertyPath: m_Name
       value: P_Door_01_Man 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441897348695858, guid: 65e9e77056ae2f348991d42e40c6801b, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90.007
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65e9e77056ae2f348991d42e40c6801b, type: 2}

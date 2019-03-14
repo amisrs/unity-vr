@@ -3,6 +3,167 @@ guid: 8e9c9eda51f38804b8aa7cbd1459393f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: Object037
+    100004: Object038
+    100006: Object039
+    100008: Object040
+    100010: Object041
+    100012: Object042
+    100014: Object043
+    100016: Object044
+    100018: Object045
+    100020: Object046
+    100022: Object050
+    100024: Object051
+    100026: Object052
+    100028: Object067
+    100030: Object068
+    100032: Object069
+    100034: Object070
+    100036: Object071
+    100038: Object072
+    100040: Object073
+    100042: Object074
+    100044: Object075
+    100046: Object077
+    100048: Object078
+    100050: Object079
+    100052: Object080
+    100054: Object081
+    100056: Object131
+    100058: Object132
+    100060: Object133
+    400000: //RootNode
+    400002: Object037
+    400004: Object038
+    400006: Object039
+    400008: Object040
+    400010: Object041
+    400012: Object042
+    400014: Object043
+    400016: Object044
+    400018: Object045
+    400020: Object046
+    400022: Object050
+    400024: Object051
+    400026: Object052
+    400028: Object067
+    400030: Object068
+    400032: Object069
+    400034: Object070
+    400036: Object071
+    400038: Object072
+    400040: Object073
+    400042: Object074
+    400044: Object075
+    400046: Object077
+    400048: Object078
+    400050: Object079
+    400052: Object080
+    400054: Object081
+    400056: Object131
+    400058: Object132
+    400060: Object133
+    2100000: 'Material #97'
+    2100002: 'Material #116'
+    2100004: 'Material #113'
+    2100006: 'Material #112'
+    2100008: 'Material #119'
+    2100010: 'Material #114'
+    2100012: 'Material #117'
+    2100014: 04 - Default
+    2100016: 'Material #115'
+    2100018: 'Material #118'
+    2300000: Object037
+    2300002: Object038
+    2300004: Object039
+    2300006: Object040
+    2300008: Object041
+    2300010: Object042
+    2300012: Object043
+    2300014: Object044
+    2300016: Object045
+    2300018: Object046
+    2300020: Object050
+    2300022: Object051
+    2300024: Object052
+    2300026: Object067
+    2300028: Object068
+    2300030: Object069
+    2300032: Object070
+    2300034: Object071
+    2300036: Object072
+    2300038: Object073
+    2300040: Object074
+    2300042: Object075
+    2300044: Object078
+    2300046: Object079
+    2300048: Object080
+    2300050: Object081
+    2300052: Object131
+    2300054: Object132
+    2300056: Object133
+    3300000: Object037
+    3300002: Object038
+    3300004: Object039
+    3300006: Object040
+    3300008: Object041
+    3300010: Object042
+    3300012: Object043
+    3300014: Object044
+    3300016: Object045
+    3300018: Object046
+    3300020: Object050
+    3300022: Object051
+    3300024: Object052
+    3300026: Object067
+    3300028: Object068
+    3300030: Object069
+    3300032: Object070
+    3300034: Object071
+    3300036: Object072
+    3300038: Object073
+    3300040: Object074
+    3300042: Object075
+    3300044: Object078
+    3300046: Object079
+    3300048: Object080
+    3300050: Object081
+    3300052: Object131
+    3300054: Object132
+    3300056: Object133
+    4300000: Object037
+    4300002: Object038
+    4300004: Object039
+    4300006: Object040
+    4300008: Object041
+    4300010: Object042
+    4300012: Object043
+    4300014: Object044
+    4300016: Object045
+    4300018: Object046
+    4300020: Object050
+    4300022: Object051
+    4300024: Object052
+    4300026: Object068
+    4300028: Object069
+    4300030: Object067
+    4300032: Object070
+    4300034: Object071
+    4300036: Object072
+    4300038: Object073
+    4300040: Object074
+    4300042: Object075
+    4300044: Object078
+    4300046: Object079
+    4300048: Object080
+    4300050: Object081
+    4300052: Object131
+    4300054: Object132
+    4300056: Object133
+    7400000: Take 001
+    9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -56,7 +217,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -76,7 +237,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

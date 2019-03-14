@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirstPhone : MonoBehaviour {
+public class FirstPhone : MonoBehaviour
+{
 
     [SerializeField]
     FactoryScript factoryScript;
@@ -12,16 +13,18 @@ public class FirstPhone : MonoBehaviour {
     private ScrewSlotController screwSlot;
     private bool isStarted;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         isStarted = false;
         screwSlot = GetComponentInChildren<ScrewSlotController>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public void ScrewPlaced()
     {
@@ -36,7 +39,7 @@ public class FirstPhone : MonoBehaviour {
 
     public void ReturnHome()
     {
-        if(!isStarted)
+        if (!isStarted)
         {
             StartCoroutine(MoveToPosition(gameObject, 1.0f));
         }
@@ -46,10 +49,10 @@ public class FirstPhone : MonoBehaviour {
     {
         if (!isStarted && collision.gameObject.layer == 9 && screwSlot.isScrewScrewed()) // conveyorlayer
         {
-            factoryScript.startWork();
+            factoryScript.countPracticePhone();
             isStarted = true;
         }
-            
+
     }
 
     private void OnCollisionEnter(Collision collision)

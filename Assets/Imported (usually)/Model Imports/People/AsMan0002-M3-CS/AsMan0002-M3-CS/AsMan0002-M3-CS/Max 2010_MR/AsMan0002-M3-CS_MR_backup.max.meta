@@ -176,6 +176,9 @@ ModelImporter:
     2100006: 'Material #26'
     2100008: AsMan0002-M3-CS_Eyes&Mouth
     2100010: AsMan0002-M3-CS_Hair
+    2100012: 'Material #0'
+    2100014: 'Material #2'
+    2100016: 'Material #1'
     2300000: Back_Wall
     3300000: Back_Wall
     4300000: Back_Wall
@@ -260,7 +263,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

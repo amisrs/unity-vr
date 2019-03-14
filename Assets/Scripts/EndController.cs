@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
+using System.IO;
 using TMPro;
 
 public class EndController : MonoBehaviour {
@@ -14,6 +16,13 @@ public class EndController : MonoBehaviour {
     private TextMeshPro paymentText;
     [SerializeField]
     private TextMeshPro endText;
+    [SerializeField]
+    private Transform textWall;
+    [SerializeField]
+    public OVRCameraRig vrCameraRig;
+    public float textDistance = 100f;
+
+    private string formURL = "";
 
     private string goodPhonesString = "You put a screw into {0} phones.";
     private string goodPhoneString = "You put a screw into {0} phone.";
@@ -29,8 +38,17 @@ public class EndController : MonoBehaviour {
     private string endString = "Press any key to end the simulation.";
 
     private bool allowEnd = false;
+
+    private Vector3 textWallOffset;
     // Use this for initialization
     void Start () {
+        vrCameraRig = FindObjectOfType<OVRCameraRig>();
+
+        textWall = goodPhonesText.transform.parent;
+        textWallOffset = textWall.position - vrCameraRig.transform.position;
+        
+        //textWall.transform.parent = vrCameraRig.transform;
+        textWall.position = vrCameraRig.transform.position;
         if(Stats.Goodphones == 1)
         {
             goodPhonesText.SetText(goodPhoneString, Stats.Goodphones);
@@ -51,6 +69,19 @@ public class EndController : MonoBehaviour {
 
         paymentText.SetText(paymentString);
         endText.SetText(endString);
+
+        string formURLFile = Path.GetDirectoryName(Application.dataPath) + "/form.txt";
+        Debug.Log(formURLFile);
+        try
+        {
+            StreamReader reader = new StreamReader(formURLFile);
+            formURL = reader.ReadToEnd();
+            reader.Close();
+            Debug.Log(formURL);
+        } catch (FileNotFoundException e)
+        {
+            Debug.Log("No form text file.");
+        }
         
 
         StartCoroutine(FadeRoutine());
@@ -59,11 +90,20 @@ public class EndController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (XRSettings.enabled)
+        {
+            Debug.DrawRay(vrCameraRig.transform.position, vrCameraRig.centerEyeAnchor.transform.forward * 10, Color.green);
+            textWall.position =  (vrCameraRig.transform.position - vrCameraRig.centerEyeAnchor.transform.forward * -textDistance);
+            textWall.LookAt(vrCameraRig.transform);
+            Debug.DrawLine(vrCameraRig.transform.position, vrCameraRig.transform.position- vrCameraRig.centerEyeAnchor.transform.forward * 10, Color.red);
+
+        }
+
         if (allowEnd)
         {
             if (Input.anyKeyDown)
             {
-                Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSd82WRkfuTBm_jpC-FwyTqljQEthD_TNo9Wm6v6WHH8jIrvsg/viewform?usp=sf_link");
+                Application.OpenURL(formURL + Stats.Goodphones);
                 Application.Quit();
 
             }
