@@ -44,6 +44,14 @@ public class EndController : MonoBehaviour {
     void Start () {
         vrCameraRig = FindObjectOfType<OVRCameraRig>();
 
+        if(XRSettings.enabled)
+        {
+            textDistance = 100f;
+        } else
+        {
+            textDistance = 60f;
+        }
+
         textWall = goodPhonesText.transform.parent;
         textWallOffset = textWall.position - vrCameraRig.transform.position;
         
@@ -71,6 +79,17 @@ public class EndController : MonoBehaviour {
         endText.SetText(endString);
 
         string formURLFile = Path.GetDirectoryName(Application.dataPath) + "/form.txt";
+        string outputFile = Path.GetDirectoryName(Application.dataPath) + "/output.txt";
+        try
+        {
+            StreamWriter writer = new StreamWriter(outputFile, true, System.Text.Encoding.UTF8);
+            writer.Write("[" + System.DateTime.Now + "]" + Stats.Goodphones.ToString() + "\n");
+            writer.Close();
+        } catch (IOException e)
+        {
+            Debug.Log(e);
+        }
+
         Debug.Log(formURLFile);
         try
         {
@@ -90,20 +109,23 @@ public class EndController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (XRSettings.enabled)
-        {
-            Debug.DrawRay(vrCameraRig.transform.position, vrCameraRig.centerEyeAnchor.transform.forward * 10, Color.green);
-            textWall.position =  (vrCameraRig.transform.position - vrCameraRig.centerEyeAnchor.transform.forward * -textDistance);
-            textWall.LookAt(vrCameraRig.transform);
-            Debug.DrawLine(vrCameraRig.transform.position, vrCameraRig.transform.position- vrCameraRig.centerEyeAnchor.transform.forward * 10, Color.red);
-
-        }
+        Debug.DrawRay(vrCameraRig.transform.position, vrCameraRig.centerEyeAnchor.transform.forward * 10, Color.green);
+        textWall.position =  (vrCameraRig.transform.position - vrCameraRig.centerEyeAnchor.transform.forward * -textDistance);
+        textWall.LookAt(vrCameraRig.transform);
+        Debug.DrawLine(vrCameraRig.transform.position, vrCameraRig.transform.position- vrCameraRig.centerEyeAnchor.transform.forward * 10, Color.red);
 
         if (allowEnd)
         {
             if (Input.anyKeyDown)
             {
-                Application.OpenURL(formURL + Stats.Goodphones);
+                if(formURL.EndsWith("=") && formURL.Contains("goo"))
+                {
+                    Application.OpenURL(formURL + Stats.Goodphones);
+                } else
+                {
+                    Application.OpenURL(formURL);
+                }
+                
                 Application.Quit();
 
             }
